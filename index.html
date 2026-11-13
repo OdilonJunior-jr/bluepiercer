@@ -421,25 +421,15 @@ dialog{border:0;padding:0;background:transparent;max-width:min(94vw,550px);max-h
 @media(prefers-reduced-motion:reduce){.booking-cat,.service,.booking-search{transition:none!important}}
 
 
-/* Ajustes mobile: eixo horizontal bloqueado, conteudo centralizado */
-html,body{width:100%;max-width:100%;overflow-x:clip;overscroll-behavior-x:none}
-.shell{width:100%;max-width:100%;min-width:0;margin-inline:auto;overflow-x:clip}
-.content{width:min(100%,410px);max-width:100%;min-width:0;margin-inline:auto}
-.marquee-window{max-width:100%;overflow:hidden;touch-action:pan-y}
-.booking-view{box-sizing:border-box;width:100%;max-width:100%;overflow-x:clip;overflow-y:auto;overscroll-behavior-x:none;touch-action:pan-y}
-.booking-inner,.booking-catalog,.booking-detail,.booking-search,.booking-hero,.booking-hero .booking-title,.service-list,.service{min-width:0;max-width:100%}
-.booking-cats{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 13px;margin-inline:0!important;padding:0 0 12px!important;overflow:visible;border-bottom:1px solid #dbe4df;scroll-snap-type:none;touch-action:pan-y}
-.booking-cat{flex:0 0 auto;scroll-snap-align:none;max-width:100%}
-.service-text,.service-name,.detail-card-title{min-width:0;overflow-wrap:anywhere}
-@media(max-width:430px){.shell{padding-left:16px;padding-right:16px}.booking-cat{font-size:11px}.booking-cats{gap:7px 12px}}
-@media(max-width:350px){.shell{padding-left:12px;padding-right:12px}.booking-cat{font-size:10.5px}}
+/* MOBILE: bloqueio de gesto lateral APENAS na página principal.
+   O agendamento foi restaurado sem estilos nem scripts de alterações mobile. */
+html, body { width:100%; max-width:100%; overflow-x:hidden; overscroll-behavior-x:none; }
+.shell { width:100%; max-width:100%; touch-action:pan-y pinch-zoom; }
+.shell > .content { box-sizing:border-box; max-width:100%; min-width:0; margin-inline:auto; }
+.shell .marquee-window { max-width:100%; overflow:hidden; touch-action:pan-y pinch-zoom; }
+.shell .marquee-track { pointer-events:none; }
+.shell .marquee-photo { pointer-events:auto; }
 
-
-/* Ajustes finais de rolagem apenas vertical */
-html,body{position:relative;min-width:0;overflow-x:clip}
-.booking-inner,.content{box-sizing:border-box;width:100%;max-width:100%;min-width:0}
-.booking-hero .booking-title{overflow-wrap:break-word}
-@media(max-width:600px){.booking-view{left:0;right:0;width:100%;max-width:100vw}.service-main{min-width:0}.service-name{overflow-wrap:break-word}}
 </style>
 </head>
 <body>
