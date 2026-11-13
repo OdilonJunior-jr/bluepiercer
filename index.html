@@ -669,16 +669,16 @@ window.addEventListener('load', () => {
 const BLUE_SERVICES = [
  ['Emergência','Emergência'],
  ['Perfurações','Perfuração de Lóbulos Auriculares'],
- ['Perfurações','Perfuração de Nariz'],
+ ['Perfurações','Perfuração Aba Nasal'],
  ['Perfurações','Perfuração Anti-Hélix (Forward Helix)'],
  ['Perfurações','Perfuração Ashley'],
  ['Perfurações','Perfuração Bridge'],
  ['Perfurações','Perfuração Conch'],
  ['Perfurações','Perfuração Conch Rim'],
  ['Perfurações','Perfuração Daith'],
- ['Perfurações','Perfuração Hélix'],
+ ['Perfurações','Perfuração F.Hélix'],
  ['Perfurações','Perfuração Faux Rook'],
- ['Perfurações','Perfuração Flat'],
+ ['Perfurações','Perfuração Hélix'],
  ['Perfurações','Perfuração Hidden Hélix'],
  ['Perfurações','Perfuração Íntima Feminina'],
  ['Perfurações','Perfuração Jestrum'],
@@ -686,14 +686,14 @@ const BLUE_SERVICES = [
  ['Perfurações','Perfuração Língua'],
  ['Perfurações','Perfuração Lóbulo (Par)'],
  ['Perfurações','Perfuração Low Helix'],
- ['Perfurações','Perfuração Mamilos'],
+ ['Perfurações','Perfuração Mamilo'],
  ['Perfurações','Perfuração Medusa'],
  ['Perfurações','Perfuração Microdermal'],
  ['Perfurações','Perfuração Monroe'],
  ['Perfurações','Perfuração Rook'],
  ['Perfurações','Perfuração Septo'],
  ['Perfurações','Perfuração Snug'],
- ['Perfurações','Perfuração Sobrancelha'],
+ ['Perfurações','Perfuração Supercílio (Sobrancelha)'],
  ['Perfurações','Perfuração Surface'],
  ['Perfurações','Perfuração Tragus'],
  ['Perfurações','Perfuração Transversal'],
@@ -701,7 +701,7 @@ const BLUE_SERVICES = [
  ['Perfurações','Perfuração Úmbigo'],
  ['Perfurações','Perfuração Vertical Labret'],
  ['Perfurações','Perfuração Venom'],
- ['Manutenção','Avaliação'],
+ ['Manutenção','Anodização'],
  ['Manutenção','Assistência de Joia'],
  ['Manutenção','Limpeza e Manutenção de Joias'],
  ['Manutenção','Polimento'],
@@ -713,50 +713,59 @@ const BLUE_SERVICES = [
  ['Procedimentos','Remoção Piercing'],
  ['Procedimentos','Retorno'],
  ['Procedimentos','Tratamento de Complicações'],
- ['Projeto','Projeto Personalizado']
+ ['Projeto','Projeto Personalizado'],
+ ['Perfurações','Expansão de Lóbulos Alargador'],
+ ['Perfurações','Perfuração Scapha (flat)'],
+ ['Perfurações','Perfuração Trio MID HELIX (Australianos)'],
+ ['Perfurações','Perfuração Íntima Masculina']
  ].map(([category,name],id)=>({id,category,name}));
 // Dados identificáveis na captura do MinhaAgenda. Valores ilegíveis não são inventados.
 const DEFAULT_PIERCING_NOTE = 'Valor referente à perfuração (joia não inclusa). O valor da joia é cobrado à parte, com modelos disponíveis no estúdio.';
 const SERVICE_INFO = {
- 'Emergência':{duration:'30 min',price:'A partir de R$ 15,00',description:'Atendimento emergencial em intercorrências. Orientação inicial e avaliação da necessidade de cuidados.'},
+ 'Emergência':{duration:'30 min',price:'A partir de R$ 15,00',description:'Atendimentos emergenciais, como perda de joia durante a cicatrização, retirada para exames ou muito desconforto. Prioritário e rápido.'},
  'Perfuração de Lóbulos Auriculares':{duration:'1 h',price:'A partir de R$ 70,00'},
- 'Perfuração de Nariz':{duration:'50 min'},
- 'Perfuração Anti-Hélix (Forward Helix)':{duration:'50 min'},
- 'Perfuração Ashley':{duration:'50 min'},
- 'Perfuração Bridge':{duration:'50 min'},
- 'Perfuração Conch':{duration:'50 min'},
- 'Perfuração Conch Rim':{duration:'50 min'},
- 'Perfuração Daith':{duration:'50 min'},
- 'Perfuração Hélix':{duration:'50 min'},
- 'Perfuração Faux Rook':{duration:'50 min'},
- 'Perfuração Flat':{duration:'45 min'},
- 'Perfuração Hidden Hélix':{duration:'50 min'},
- 'Perfuração Íntima Feminina':{duration:'1 h'},
- 'Perfuração Jestrum':{duration:'50 min'},
- 'Perfuração Labret':{duration:'50 min'},
+ 'Expansão de Lóbulos Alargador':{duration:'1 h',price:'A partir de R$ 70,00',jewel:'Joias a partir de R$ 20,00; modelos em titânio a partir de R$ 70,00.'},
+ 'Perfuração Aba Nasal':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Anti-Hélix (Forward Helix)':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Ashley':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Bridge':{duration:'50 min',price:'R$ 80,00',jewel:'Joias em titânio disponíveis a partir de R$ 75,00.'},
+ 'Perfuração Conch':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Conch Rim':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Daith':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração F.Hélix':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Faux Rook':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Hélix':{duration:'45 min',price:'R$ 70,00'},
+ 'Perfuração Hidden Hélix':{duration:'50 min',price:'R$ 70,00',jewel:'Joias em titânio disponíveis a partir de R$ 130,00.'},
+ 'Perfuração Íntima Feminina':{duration:'1 h',price:'R$ 100,00',description:'Sujeito à avaliação. Valor referente apenas à perfuração (joia não inclusa). O valor da joia é à parte, com modelos em titânio disponíveis a partir de R$ 100,00.'},
+ 'Perfuração Jestrum':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Labret':{duration:'50 min',price:'R$ 70,00',description:'Não realizado inicialmente com argola. Valor referente apenas à perfuração (joia não inclusa). O valor da joia é cobrado à parte, com modelos em titânio disponíveis a partir de R$ 60,00.'},
  'Perfuração Língua':{duration:'50 min'},
  'Perfuração Lóbulo (Par)':{duration:'1 h'},
- 'Perfuração Low Helix':{duration:'1 h'},
- 'Perfuração Mamilos':{duration:'1 h'},
- 'Perfuração Medusa':{duration:'50 min'},
- 'Perfuração Microdermal':{duration:'1 h'},
- 'Perfuração Monroe':{duration:'50 min'},
- 'Perfuração Rook':{duration:'50 min'},
- 'Perfuração Septo':{duration:'50 min'},
+ 'Perfuração Low Helix':{duration:'1 h',price:'R$ 70,00'},
+ 'Perfuração Mamilo':{duration:'1 h',price:'R$ 80,00',description:'Sujeito à avaliação. Valor referente apenas à perfuração (joia não inclusa). O valor da joia é cobrado à parte; joias em titânio disponíveis a partir de R$ 70,00.'},
+ 'Perfuração Medusa':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Microdermal':{duration:'1 h',price:'R$ 95,00',jewel:'Joias em titânio disponíveis a partir de R$ 95,00.'},
+ 'Perfuração Monroe':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Rook':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Scapha (flat)':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Septo':{duration:'1 h',price:'R$ 70,00'},
  'Perfuração Snug':{duration:'50 min'},
- 'Perfuração Sobrancelha':{duration:'40 min'},
- 'Perfuração Surface':{duration:'50 min'},
- 'Perfuração Tragus':{duration:'50 min'},
- 'Perfuração Transversal':{duration:'1 h'},
- 'Perfuração Transversal Lóbulo':{duration:'30 min'},
- 'Perfuração Úmbigo':{duration:'1 h'},
- 'Perfuração Vertical Labret':{duration:'50 min'},
+ 'Perfuração Supercílio (Sobrancelha)':{duration:'40 min',price:'R$ 70,00'},
+ 'Perfuração Surface':{duration:'50 min',price:'R$ 90,00',jewel:'Joias em titânio disponíveis a partir de R$ 120,00.'},
+ 'Perfuração Tragus':{duration:'50 min',price:'R$ 70,00'},
+ 'Perfuração Transversal':{duration:'1 h',price:'R$ 80,00',jewel:'Joias em titânio disponíveis a partir de R$ 75,00.'},
+ 'Perfuração Transversal Lóbulo':{duration:'30 min',price:'R$ 70,00'},
+ 'Perfuração Trio MID HELIX (Australianos)':{duration:'50 min',price:'R$ 210,00',jewel:'Joias em titânio disponíveis a partir de R$ 80,00.'},
+ 'Perfuração Úmbigo':{duration:'45 min',price:'R$ 70,00',jewel:'Joias em titânio disponíveis a partir de R$ 75,00.'},
+ 'Perfuração Vertical Labret':{duration:'50 min',price:'R$ 70,00'},
  'Perfuração Venom':{duration:'30 min'},
+ 'Perfuração Íntima Masculina':{duration:'30 min',price:'R$ 100,00'},
+ 'Anodização':{duration:'20 min',price:'A partir de R$ 15,00',description:'Joias em titânio são naturalmente prateadas. É possível alterar a cor de algumas peças por anodização.'},
+ 'Assistência de Joia':{duration:'30 min',price:'R$ 10,00'},
+ 'Limpeza e Manutenção de Joias':{duration:'30 min',price:'A partir de R$ 40,00',description:'Limpeza ultrassônica e manual com detergente específico para remover impurezas, mesmo em microfissuras, e renovar o brilho da peça.'},
+ 'Polimento':{duration:'50 min',price:'A partir de R$ 30,00',description:'Polimento profissional para remoção de riscos leves, oxidação e marcas de uso. O valor varia conforme a quantidade de joias.'},
+ 'Upgrade (Troca de Joia)':{duration:'30 min',price:'A partir de R$ 10,00',description:'Troque sua joia por um modelo novo. O valor da joia não está incluso; ao adquirir uma joia no estúdio, não é cobrada a troca.'},
  'Avaliação':{duration:'20 min',description:'Avaliação individual antes da definição de cuidados ou procedimento.'},
- 'Assistência de Joia':{duration:'30 min'},
- 'Limpeza e Manutenção de Joias':{duration:'20 min',description:'Higienização e manutenção das peças, com avaliação das condições de uso.'},
- 'Polimento':{duration:'60 min',description:'Polimento profissional para renovação do brilho das joias.'},
- 'Upgrade (Troca de Joia)':{duration:'30 min',description:'Troca por uma joia nova e avaliação visual da perfuração. O valor da joia é à parte.'},
  'Laser (Fotobiomodulação)':{duration:'30 min',description:'Fotobiomodulação com laser de baixa intensidade para auxiliar em processos de recuperação, conforme avaliação profissional.'},
  'Recuperação de Perfuração':{duration:'30 min',description:'Avaliação da perfuração e orientação de cuidados para recuperação.'},
  'Remoção Microdermal':{duration:'30 min',description:'Remoção cuidadosa do microdermal, após avaliação do local.'},
@@ -769,7 +778,8 @@ BLUE_SERVICES.forEach(s=>{
  const info=SERVICE_INFO[s.name]||{};
  s.duration=info.duration||null;
  s.price=info.price||null;
- s.description=info.description||(s.category==='Perfurações'?DEFAULT_PIERCING_NOTE:'Descrição detalhada disponível no catálogo oficial da Blue Piercer.');
+ s.description=info.description||(s.category==='Perfurações' ? (DEFAULT_PIERCING_NOTE + ' ' + (info.jewel || 'Joias em titânio disponíveis a partir de R$ 60,00.')) : 'Descrição detalhada disponível no catálogo oficial da Blue Piercer.');
+ if(info.jewel && info.description) s.description += ' '+info.jewel;
 });
 (function(){
  const view=document.getElementById('bookingView'),opener=document.getElementById('openBooking'),back=document.getElementById('bookingBack'),cat=document.getElementById('bookingCatalog'),detail=document.getElementById('bookingDetail'),tabs=document.getElementById('bookingCategories'),list=document.getElementById('bookingServices'),search=document.getElementById('bookingSearch');
@@ -780,7 +790,12 @@ BLUE_SERVICES.forEach(s=>{
  const BLUE_WHATSAPP='5534984106574';
  const norm=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
  function textEl(tag,cls,t){const e=document.createElement(tag);e.className=cls;e.textContent=t;return e}
- function serviceArt(service){return 'assets/servico-'+String(service.id).padStart(2,'0')+'.webp';}
+ function serviceArt(service){
+   // New entries reuse the closest neutral location illustration until a dedicated graphic is approved.
+   const fallback = {'Expansão de Lóbulos Alargador':1,'Perfuração Scapha (flat)':11,'Perfuração Trio MID HELIX (Australianos)':9,'Perfuração Íntima Masculina':13};
+   const id = service.id < 47 ? service.id : fallback[service.name];
+   return 'assets/servico-'+String(id).padStart(2,'0')+'.webp';
+ }
  function teaser(service){
   if(service.category!=='Perfurações')return service.description;
   const key=norm(service.name);
