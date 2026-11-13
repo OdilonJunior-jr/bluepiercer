@@ -1,0 +1,18 @@
+BLUE PIERCER — LINKBIO + AGENDAMENTO | REVISÃO FINAL
+
+Para abrir: execute index.html em navegador moderno. O GSAP e as fontes precisam de internet para carregar; as funções essenciais do agendamento funcionam sem GSAP.
+
+O que foi revisado:
+- Cabeçalho do catálogo centralizado, inclusive em telas móveis estreitas.
+- Navegação por categoria, busca, visualização de informações, formulário de nome e WhatsApp.
+- 33 perfurações em categoria Perfurações e 47 serviços no catálogo completo.
+- Checagem de sintaxe JS, imagens referenciadas, IDs duplicados e testes em 320/390/1280 px.
+- Navegação por teclado com contenção de foco na tela de agendamento.
+
+ATENÇÃO ANTES DE PUBLICAR:
+- Confirme o WhatsApp configurado no index.html (const BLUE_WHATSAPP).
+- Valide diretamente com a profissional as descrições, preços, duração e catálogo atual. Valores não confirmados aparecem como 'Valor a consultar'.
+- As miniaturas são ilustrativas e não substituem fotos reais ou avaliação de perfuração.
+- O formulário solicita contato via WhatsApp; NÃO reserva horários automaticamente.
+
+O arquivo mapa-imagens-servicos.csv associa cada procedimento à sua imagem.

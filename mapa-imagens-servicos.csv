@@ -1,0 +1,48 @@
+﻿id,categoria,servico,imagem,tipo,local
+0,Emergência,Emergência,servico-00.webp,símbolo neutro,não especificado
+1,Perfurações,Perfuração de Lóbulos Auriculares,servico-01.webp,diagrama da região,ear
+2,Perfurações,Perfuração de Nariz,servico-02.webp,diagrama da região,nose
+3,Perfurações,Perfuração Anti-Hélix (Forward Helix),servico-03.webp,diagrama da região,ear
+4,Perfurações,Perfuração Ashley,servico-04.webp,diagrama da região,lips
+5,Perfurações,Perfuração Bridge,servico-05.webp,diagrama da região,face
+6,Perfurações,Perfuração Conch,servico-06.webp,diagrama da região,ear
+7,Perfurações,Perfuração Conch Rim,servico-07.webp,diagrama da região,ear
+8,Perfurações,Perfuração Daith,servico-08.webp,diagrama da região,ear
+9,Perfurações,Perfuração Hélix,servico-09.webp,diagrama da região,ear
+10,Perfurações,Perfuração Faux Rook,servico-10.webp,diagrama da região,ear
+11,Perfurações,Perfuração Flat,servico-11.webp,diagrama da região,ear
+12,Perfurações,Perfuração Hidden Hélix,servico-12.webp,diagrama da região,ear
+13,Perfurações,Perfuração Íntima Feminina,servico-13.webp,símbolo neutro,não especificado
+14,Perfurações,Perfuração Jestrum,servico-14.webp,diagrama da região,lips
+15,Perfurações,Perfuração Labret,servico-15.webp,diagrama da região,lips
+16,Perfurações,Perfuração Língua,servico-16.webp,diagrama da região,tongue
+17,Perfurações,Perfuração Lóbulo (Par),servico-17.webp,diagrama da região,ear
+18,Perfurações,Perfuração Low Helix,servico-18.webp,diagrama da região,ear
+19,Perfurações,Perfuração Mamilos,servico-19.webp,símbolo neutro,não especificado
+20,Perfurações,Perfuração Medusa,servico-20.webp,diagrama da região,lips
+21,Perfurações,Perfuração Microdermal,servico-21.webp,símbolo neutro,não especificado
+22,Perfurações,Perfuração Monroe,servico-22.webp,diagrama da região,lips
+23,Perfurações,Perfuração Rook,servico-23.webp,diagrama da região,ear
+24,Perfurações,Perfuração Septo,servico-24.webp,diagrama da região,nose
+25,Perfurações,Perfuração Snug,servico-25.webp,diagrama da região,ear
+26,Perfurações,Perfuração Sobrancelha,servico-26.webp,diagrama da região,face
+27,Perfurações,Perfuração Surface,servico-27.webp,símbolo neutro,não especificado
+28,Perfurações,Perfuração Tragus,servico-28.webp,diagrama da região,ear
+29,Perfurações,Perfuração Transversal,servico-29.webp,diagrama da região,ear
+30,Perfurações,Perfuração Transversal Lóbulo,servico-30.webp,diagrama da região,ear
+31,Perfurações,Perfuração Úmbigo,servico-31.webp,diagrama da região,navel
+32,Perfurações,Perfuração Vertical Labret,servico-32.webp,diagrama da região,lips
+33,Perfurações,Perfuração Venom,servico-33.webp,diagrama da região,tongue
+34,Manutenção,Avaliação,servico-34.webp,símbolo neutro,não especificado
+35,Manutenção,Assistência de Joia,servico-35.webp,símbolo neutro,não especificado
+36,Manutenção,Limpeza e Manutenção de Joias,servico-36.webp,símbolo neutro,não especificado
+37,Manutenção,Polimento,servico-37.webp,símbolo neutro,não especificado
+38,Manutenção,Upgrade (Troca de Joia),servico-38.webp,símbolo neutro,não especificado
+39,Procedimentos,Avaliação,servico-39.webp,símbolo neutro,não especificado
+40,Procedimentos,Laser (Fotobiomodulação),servico-40.webp,símbolo neutro,não especificado
+41,Procedimentos,Recuperação de Perfuração,servico-41.webp,símbolo neutro,não especificado
+42,Procedimentos,Remoção Microdermal,servico-42.webp,símbolo neutro,não especificado
+43,Procedimentos,Remoção Piercing,servico-43.webp,símbolo neutro,não especificado
+44,Procedimentos,Retorno,servico-44.webp,símbolo neutro,não especificado
+45,Procedimentos,Tratamento de Complicações,servico-45.webp,símbolo neutro,não especificado
+46,Projeto,Projeto Personalizado,servico-46.webp,símbolo neutro,não especificado

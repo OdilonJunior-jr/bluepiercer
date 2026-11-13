@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#245e66" />
+<meta name="description" content="Blue Piercer | Body piercing. Seu brilho, sua essência. Conheça os trabalhos e agende sua sessão." />
+<title>Blue Piercer ✧ Seu brilho, sua essência</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#f8ebe4;--sea:#235d66;--dark:#103940;--muted:#d2e0dc;--pearl:#fceee7;--light:#fdf4ea;--edge:#e8faf2a8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:#153e45;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid #fff8da;outline-offset:5px}
+.shell{position:relative;min-height:100svh;overflow:hidden;padding:40px 21px max(30px, env(safe-area-inset-bottom));background:linear-gradient(160deg,#326e76 0%,#265b64 42%,#17454d 100%);isolation:isolate}
+
+
+.content{position:relative;z-index:2;width:min(100%,410px);margin:auto;text-align:center}.eyebrow{color:#edf4eb;font-size:10px;letter-spacing:.38em;text-transform:uppercase;font-weight:500;margin-bottom:16px}.portrait-orbit{position:relative;width:152px;height:152px;margin:0 auto 13px;display:grid;place-items:center}.portrait-orbit:before,.portrait-orbit:after{content:"";position:absolute;border:1px solid #fbe9d9ab;border-radius:50%;inset:1px;transform:rotate(-24deg) scaleX(1.16);box-shadow:0 0 20px #fff7e53d}.portrait-orbit:after{inset:-8px;border-color:#e5f4e76b;transform:rotate(36deg) scaleX(.96) scaleY(1.09);box-shadow:none}.portrait{height:139px;width:139px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:3px solid #f8e3d5;box-shadow:0 0 0 6px #c4eeea21,0 9px 33px #102d3780}.star{position:absolute;font-size:25px;color:#fff3dc;text-shadow:0 0 16px #fff5df}.star.one{left:-12px;top:22px}.star.two{right:-17px;bottom:21px;font-size:19px}.star.three{right:4px;top:-10px;font-size:12px}
+h1{font:400 clamp(52px,14vw,68px)/1.08 'Italiana','Playfair Display',Georgia,serif;letter-spacing:-2.2px;margin:7px 0 0;text-shadow:0 3px 16px #0019232a}.tagline{font:italic 400 17px/1.5 'Playfair Display',Georgia,serif;color:#fff0e6;margin:10px auto 0;max-width:350px}.location{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#c9e9e4;margin:14px 0 0}.ornament{display:flex;align-items:center;justify-content:center;gap:12px;width:min(100%,250px);margin:22px auto 24px}.ornament-line{position:relative;flex:1;height:1px;background:linear-gradient(90deg,rgba(255,245,229,0),rgba(255,239,224,.92),rgba(255,245,229,0));transform-origin:center;animation:lineBreath 2.2s ease-in-out infinite}.ornament-line.right{animation-delay:1.1s}.ornament-core{width:34px;height:34px;display:grid;place-items:center;color:#f8e8dc;filter:drop-shadow(0 2px 6px rgba(3,30,34,.18))}.ornament-core svg{width:30px;height:30px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;overflow:visible}.ornament-core img{width:34px;height:34px;display:block;object-fit:contain;user-select:none;pointer-events:none}.ornament-core .gem{fill:currentColor;stroke:none}.ornament-core .solid{fill:none;stroke:currentColor}.ornament-core .filled{fill:currentColor;stroke:none}.ornament-core.is-changing{opacity:.82;transform:scale(.92)}
+.links{display:grid;gap:12px}.link{position:relative;display:grid;grid-template-columns:30px 1fr 26px;gap:10px;align-items:center;min-height:67px;padding:13px 23px;border:1px solid #d8eee6b7;border-radius:100px;background:linear-gradient(130deg,#e0f9ee20,#ffffff08 58%,#f4fff721);box-shadow:inset 0 1px #ffffff50,0 9px 22px #002c3624;backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);transition:transform .25s,background .25s,border-color .25s}.link:hover{transform:translateY(-3px);border-color:#fff5de;background:#c4eae43c}.link.primary{color:#26515a;border-color:#fff5e9;background:linear-gradient(105deg,#ffe3d7,#fff7f0 55%,#daeeed);box-shadow:0 9px 28px #102d3636,inset 0 1px #fff}.link.primary:hover{background:linear-gradient(105deg,#fff4ed,#ffffff,#dff6f1)}.link svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.link span{font:400 20px/1.15 'Playfair Display',Georgia,serif;white-space:nowrap}.link .arrow{height:20px;width:20px;justify-self:end;stroke-width:1.35}
+.gallery-header{margin:29px 0 13px;display:flex;justify-content:center;align-items:center;gap:13px;color:#fff4e9;font:italic 400 16px 'Playfair Display',Georgia,serif}.gallery-header:before,.gallery-header:after{content:'';font:17px 'DM Sans',sans-serif;color:#f8eadc}.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.photo{position:relative;aspect-ratio: .87;display:block;padding:0;cursor:zoom-in;border:1px solid #ffe9d9a6;overflow:hidden;border-radius:27px;background:#174d55;box-shadow:0 8px 22px #05282b3b;transition:transform .3s}.photo:hover{transform:translateY(-4px)}.photo img{height:100%;width:100%;object-fit:cover;display:block;transition:transform .5s}.photo:hover img{transform:scale(1.08)}.tiny-stars{margin:14px auto 20px;font-size:13px;color:#ffe6d3;letter-spacing:8px}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);margin-top:6px;align-items:start}.perk{padding:0 6px;font:italic 13px/1.35 'Playfair Display',Georgia,serif;color:#f7e9e0}.perk+ .perk{border-left:1px solid #fbeae06e}.perk svg{width:24px;height:24px;display:block;margin:0 auto 8px;stroke:#f9e8d9;fill:none;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}.footer{margin:27px auto 0;color:#c6dfdc;font-size:11px}.footer a{text-decoration:underline;text-underline-offset:4px;color:#ffebe0}.footer .emblem{font-size:29px;color:#fce6d8;margin:0 0 8px}.floating{animation:float 5s ease-in-out infinite}.reveal{animation:rise .75s ease both}.delay1{animation-delay:.12s}.delay2{animation-delay:.23s}.delay3{animation-delay:.34s}.delay4{animation-delay:.48s}@keyframes rise{from{opacity:0;transform:translateY(17px)}to{opacity:1;transform:translateY(0)}}@keyframes float{50%{transform:translateY(-5px) rotate(4deg)}}@keyframes lineBreath{0%,100%{transform:scaleX(.58);opacity:.45}50%{transform:scaleX(1);opacity:1}}
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,550px);max-height:92svh;overflow:visible}dialog::backdrop{background:#071b20dc;backdrop-filter:blur(5px)}dialog img{max-height:80svh;max-width:94vw;object-fit:contain;border-radius:16px;display:block}.close{position:absolute;right:-6px;top:-48px;width:38px;height:38px;border-radius:50%;background:#fff1e8;color:#16444a;border:0;font-size:26px;cursor:pointer}
+@media(min-width:700px){.shell{padding-top:55px;padding-bottom:65px}.content{max-width:410px}.portrait-orbit{width:169px;height:169px}.portrait{width:151px;height:151px}.tagline{font-size:18px}}@media(max-width:375px){.shell{padding-left:15px;padding-right:15px}.link{min-height:63px;padding:10px 19px}.link span{font-size:18px}.photos{gap:7px}.photo{border-radius:20px}.perk{font-size:12px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Peças flutuantes: pequenas joias reais, sem ondas, textura em espiral ou imagens de fundo */
+.jewel-atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;contain:layout paint}
+.jewel-sprite{position:absolute;left:0;top:0;opacity:0;width:70px;height:70px;display:grid;place-items:center;will-change:transform,opacity;filter:drop-shadow(0 3px 10px rgba(239,241,230,.17))}
+.jewel-sprite img{width:100%;height:100%;object-fit:contain;display:block}
+.flash-star{position:absolute;top:-10%;right:-6%;font-size:24px;color:#fff0d8;text-shadow:0 0 6px #fff9e9,0 0 20px #f7d8c3;opacity:0;transform:scale(.25)}
+@media(max-width:440px){.jewel-sprite{width:52px;height:52px}.flash-star{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.jewel-atmosphere{display:none}}
+
+/* Linkbio refinado: duas acoes e icones sociais no rodape */
+.links{gap:9px;width:min(100%,340px);margin-inline:auto}
+.link{grid-template-columns:24px 1fr 18px;min-height:51px;border-radius:15px;padding:10px 16px;gap:10px;border-color:#f9eade75;background:#ffffff0b;box-shadow:none;backdrop-filter:blur(9px)}
+.link span{font:400 16px/1.25 'Playfair Display',Georgia,serif;letter-spacing:.01em}
+.link svg{width:19px;height:19px}.link .arrow{width:15px;height:15px}
+.link.primary{background:#f7eae1;color:#245861;border-color:#f8eae3;box-shadow:0 7px 20px #0a283229}
+.link:not(.primary){border:1px solid #f9eade78;background:transparent;color:#fdf0e9}
+.link:hover{transform:translateY(-2px);box-shadow:0 8px 18px #06293136}
+.footer{margin:26px auto 0}.footer-social{display:flex;justify-content:center;gap:16px;align-items:center;margin:0 auto 17px}
+.social-icon{display:grid;place-items:center;width:42px;height:42px;border:1px solid #e7eee4a3;border-radius:50%;background:#e8f4ef10;color:#fff4ea;transition:background .25s,transform .25s}
+.social-icon:hover{background:#e8f4ef28;transform:translateY(-3px)}.social-icon svg{width:21px;height:21px}
+.jewel-sprite{width:60px;height:60px;filter:none;opacity:0}
+.jewel-sprite img{object-fit:contain}
+@media(max-width:440px){.jewel-sprite{width:36px;height:36px}.links{width:min(100%,316px)}}
+
+/* Identidade: pequenos aros de piercing no lugar de estrelas */
+.star{display:block;width:28px;height:28px;font-size:0;text-shadow:none}.star.two{width:22px;height:22px}
+.piercing-symbol{width:100%;height:100%;fill:none;stroke:#f9e8da;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 5px #09384233)}
+.ornament{height:auto}
+.gallery-header:before,.gallery-header:after{content:' ';width:16px;height:16px;display:block;border:2px solid #f7e6d5;border-right-color:transparent;border-radius:100%;transform:rotate(-35deg)}
+.tiny-stars{display:none}.footer .emblem{width:26px;height:26px;margin:2px auto 10px}.footer .emblem svg{width:26px;height:26px}
+/* Loop horizontal infinito, sem cards de link e sem cortes de imagens nas extremidades */
+.marquee-window{width:100%;overflow:hidden;position:relative;mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:blue-scroll 33s linear infinite;will-change:transform}
+.marquee-set{display:flex;flex:none;align-items:center;gap:10px;padding-right:10px}
+.marquee-photo{display:block;flex:none;width:116px;height:145px;overflow:hidden;border-radius:21px;border:1px solid #f7e5dc9c;box-shadow:0 5px 16px #07262e38;background:#1d4a4f;transition:border-color .2s,transform .25s}
+.marquee-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.marquee-photo:hover{transform:scale(.975);border-color:#fff9f0}
+.marquee-window:hover .marquee-track,.marquee-window:focus-within .marquee-track{animation-play-state:paused}
+@keyframes blue-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.portfolio-hint{color:#dfebe5;font-size:10px;letter-spacing:.04em;margin:12px 0 18px;opacity:.9}
+@media(max-width:440px){.marquee-photo{width:102px;height:132px;border-radius:19px}.marquee-set{gap:8px;padding-right:8px}.marquee-track{animation-duration:29s}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important}.marquee-window{overflow-x:auto;mask-image:none;-webkit-mask-image:none;scrollbar-width:thin}.marquee-set[aria-hidden=true]{display:none}}
+
+/* Ajustes: somente o título, foto original, selo azul e órbitas animadas */
+.gallery-header{display:block;text-align:center;gap:0}
+.gallery-header::before,.gallery-header::after{content:none!important;display:none!important}
+.portrait-orbit{isolation:isolate}
+.portrait-orbit::before,.portrait-orbit::after{content:none!important;display:none!important}
+.portrait{position:relative;z-index:2;object-position:50% 42%}
+.orbit-ring{position:absolute;inset:-3px;z-index:1;border-radius:50%;pointer-events:none;will-change:transform}
+.orbit-ring-a{border:1px solid rgba(255,237,215,.72);border-left-color:transparent;border-right-color:transparent;transform:rotate(-25deg) scaleX(1.15) scaleY(.96)}
+.orbit-ring-b{inset:-11px;border:1px solid rgba(201,242,232,.54);border-top-color:transparent;border-bottom-color:transparent;transform:rotate(34deg) scaleX(.92) scaleY(1.12)}
+.verified-badge{position:absolute;z-index:5;right:-11px;bottom:17px;width:32px;height:32px;display:grid;place-items:center;filter:drop-shadow(0 3px 6px #062e3699);animation:badge-bob 4.2s ease-in-out infinite}
+.verified-badge svg{width:100%;height:100%;display:block}
+@keyframes badge-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){.verified-badge{animation:none!important}}
+
+/* Agenda integrada: página interna do mesmo index, com navegação independente */
+.booking-view{position:fixed;inset:0;z-index:100;visibility:hidden;opacity:0;pointer-events:none;overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(158deg,#245e67,#12383f 90%);color:#fdf2ea;padding:calc(20px + env(safe-area-inset-top)) 16px calc(30px + env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch}
+.booking-view.is-open{visibility:visible;opacity:1;pointer-events:auto}
+.booking-inner{width:min(100%,590px);margin:auto}
+.booking-top{display:flex;align-items:center;gap:13px;margin-bottom:24px}
+.booking-back{width:42px;height:42px;border:1px solid #ffffff65;border-radius:50%;background:#ffffff0c;color:#fff;display:grid;place-items:center;cursor:pointer;flex-shrink:0}
+.booking-back svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
+.booking-brand{font:32px 'Italiana',serif;line-height:1}.booking-kicker{font:10px 'DM Sans',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#c8dfdb;margin-top:5px}
+.booking-title{font:400 35px/1.08 'Italiana',serif;margin:0 0 9px}.booking-desc{font:13px/1.6 'DM Sans',sans-serif;color:#dfebe6;margin:0 0 18px}
+.booking-search{display:flex;align-items:center;border:1px solid #ffffff60;background:#ffffff16;border-radius:14px;padding:0 14px;margin-bottom:14px;gap:9px}.booking-search svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}.booking-search input{width:100%;background:none;border:0;outline:none;color:#fff;font:14px 'DM Sans',sans-serif;padding:15px 0}.booking-search input::placeholder{color:#bed1d0}
+.booking-cats{display:flex;gap:8px;overflow-x:auto;margin:0 -16px 16px;padding:2px 16px 9px;scrollbar-width:none}.booking-cats::-webkit-scrollbar{display:none}.booking-cat{background:#ffffff11;color:#f5e8e0;border:1px solid #ffffff5e;border-radius:30px;white-space:nowrap;padding:9px 13px;font:600 12px 'DM Sans',sans-serif;cursor:pointer}.booking-cat.active{background:#ffefe6;color:#17464f;border-color:#ffefe6}
+.booking-count{font-size:12px;color:#cfe6e1;margin-bottom:10px}.service-list{display:grid;gap:9px}.service{display:grid;grid-template-columns:45px minmax(0,1fr) 18px;gap:12px;text-align:left;align-items:center;width:100%;border:1px solid #f7ede251;border-radius:17px;padding:11px;background:linear-gradient(125deg,#ffffff18,#ffffff07);color:#fff6f1;cursor:pointer;transition:background .22s,transform .22s}.service:hover{background:#ffffff24;transform:translateY(-1px)}.service-icon{height:45px;width:45px;border-radius:13px;background:#ffffff1c;display:grid;place-items:center}.service-icon img{width:30px;height:30px;object-fit:contain}.service-name{font:600 13px/1.35 'DM Sans',sans-serif;display:block}.service-category{font:11px 'DM Sans',sans-serif;color:#c7dfda;display:block;margin-top:4px}.service-arrow{font-size:23px;color:#ffece1}.booking-detail{display:none}.booking-detail.is-visible{display:block}.booking-catalog.is-hidden{display:none}.detail-piece{width:80px;height:80px;display:grid;place-items:center;border:1px solid #f9eee16c;border-radius:24px;background:#ffffff16;margin:6px 0 19px}.detail-piece img{width:65px;height:65px;object-fit:contain}.detail-info{border:1px solid #ffffff42;border-radius:16px;padding:15px;margin:22px 0;background:#ffffff0b}.detail-info strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#cbe4df;margin-bottom:6px}.detail-info p{margin:0 0 15px;line-height:1.55;font-size:13px}.detail-info p:last-child{margin-bottom:0}.booking-cta{display:flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:14px;background:#fff0e6;color:#16444d;padding:16px 15px;width:100%;font:600 14px 'DM Sans',sans-serif;text-align:center;cursor:pointer}.booking-note{font:11px/1.6 'DM Sans',sans-serif;color:#d4e8e4;text-align:center;margin:12px 5px}.booking-empty{padding:25px;text-align:center;color:#def0ed;font-size:13px}.booking-top-spacer{flex:1}.booking-step{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#b9d7d2}.booking-view button:focus-visible,.booking-view a:focus-visible,.booking-view input:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:390px){.booking-title{font-size:30px}.service{gap:9px;padding:9px}.service-name{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.booking-view,.service{transition:none!important}}
+
+
+/* V3 - agenda editorial em abas (sem alterar o linkbio) */
+.booking-view{background:#f9f5f0;color:#234e52;padding:0 0 calc(100px + env(safe-area-inset-bottom));}
+.booking-inner{width:min(100%,660px);min-height:100svh;background:#f9f5f0}
+.booking-top{position:sticky;top:0;z-index:15;background:#f9f5f0ed;backdrop-filter:blur(18px);padding:15px 18px;margin:0;border-bottom:1px solid #244b4d1a;gap:12px}
+.booking-back{background:#e8efeb;border:1px solid #d4e2dc;color:#24585b;width:39px;height:39px}
+.booking-brand{font:400 27px 'Italiana',serif;color:#174f54}.booking-kicker{font-size:9px;color:#678487}.booking-step{color:#5b8181}
+.booking-catalog,.booking-detail{padding:24px 18px 20px}
+.booking-title{font:400 39px/1.05 'Italiana',Georgia,serif;color:#1f5559;letter-spacing:-.02em}
+.booking-desc{font-size:13px;color:#688083;max-width:430px}
+.booking-search{border:1px solid #d8e2dc;background:#fff;border-radius:13px;color:#477175;padding:0 13px;margin-bottom:19px;box-shadow:0 4px 15px #22514d08}
+.booking-search input{color:#1d5155;padding:13px 0}.booking-search input::placeholder{color:#8aa2a1}
+.booking-cats{margin:0 -18px 19px;padding:0 18px 13px;gap:7px;scrollbar-width:none}
+.booking-cat{background:#e8eeea;color:#426b6c;border:1px solid #e0e9e3;border-radius:11px;padding:12px 14px;font-size:11px;font-weight:700;transition:.2s}
+.booking-cat.active{background:#225b61;border-color:#225b61;color:#fff;box-shadow:0 4px 13px #17454d30}
+.booking-count{color:#698787;font-size:11px;margin-bottom:12px}
+.service-list{display:grid;gap:10px}
+.service{display:block;width:100%;background:#fff;border:1px solid #e8e6e0;border-radius:16px;box-shadow:0 3px 15px #154b4a08;color:#194c50;padding:0;overflow:hidden;text-align:left;transform:none!important;cursor:default}
+.service-main{width:100%;display:flex;gap:11px;padding:13px 13px;align-items:center;background:none;border:0;cursor:pointer;color:inherit;text-align:left}
+.service-icon{width:48px;height:48px;min-width:48px;border-radius:12px;background:#e4efec}
+.service-icon img{width:32px;height:32px}
+.service-text{min-width:0;flex:1}.service-name{font-size:13px;line-height:1.35;color:#1e4b4f;font-weight:700}
+.service-category{font-size:11px;color:#859b9b;margin-top:4px}
+.service-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.service-meta span{font-size:10px;color:#316c6c;background:#eaf4ef;border-radius:6px;padding:4px 7px;font-weight:600}
+.service-arrow{font-size:23px;color:#658b8a;transition:transform .25s}
+.service.is-expanded .service-arrow{transform:rotate(90deg)}
+.service-extra{display:none;border-top:1px solid #e8ece7;background:#fffdfb;padding:13px 15px 15px}
+.service.is-expanded .service-extra{display:block}
+.service-extra p{font-size:12px;line-height:1.65;color:#677e7e;margin:0 0 12px}
+.service-select{border:0;background:#215d64;color:white;font:700 12px 'DM Sans',sans-serif;border-radius:10px;padding:11px 17px;width:100%;cursor:pointer}
+.booking-detail .detail-piece{background:#e5efec;border-color:#d7e8df}.booking-detail .detail-info{background:white;border-color:#e4e8e4;color:#2a5358}
+.booking-detail .detail-info strong{color:#64807f}.booking-detail .detail-info p{color:#516e6e}.booking-detail .booking-note{color:#678384}
+.booking-detail .booking-cta{background:#225d64;color:white}
+.booking-empty{color:#6f8987}
+.booking-choice{display:flex;align-items:center;gap:12px;border-radius:14px;background:#e5eee9;border:1px solid #d9e7df;padding:11px 13px;margin:2px 0 16px;color:#285d60;font-size:12px}
+.booking-choice strong{display:block;margin-bottom:2px}.booking-choice small{display:block;color:#708b89;font-size:10px}
+.booking-detail .booking-title{margin-top:12px}
+.booking-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#638783;margin-bottom:8px;font-weight:700}
+@media(max-width:390px){.booking-catalog,.booking-detail{padding:21px 13px}.booking-cats{margin-left:-13px;margin-right:-13px;padding-left:13px;padding-right:13px}.booking-title{font-size:34px}}
+
+
+/* === Refino visual do agendamento com artes por local de perfuracao === */
+.booking-catalog,.booking-detail{padding:24px 18px 24px}
+.booking-cats{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;gap:10px;overflow-x:auto;padding:2px 1px 14px;margin:0 0 18px;scrollbar-width:none}
+.booking-cats::-webkit-scrollbar{display:none}
+.booking-cat{background:#edf1ee;color:#567173;border:1px solid #dce8e2;border-radius:16px;padding:14px 18px;font:700 13px/1 'DM Sans',sans-serif;letter-spacing:.01em;transition:.24s;box-shadow:0 4px 14px rgba(19,67,72,.05)}
+.booking-cat:hover{transform:translateY(-1px);background:#f5f7f5}
+.booking-cat.active{background:linear-gradient(135deg,#1d5a62,#2a7478);border-color:#1d5a62;color:#fff;box-shadow:0 10px 24px rgba(17,67,73,.24)}
+.booking-count{font-size:12px;color:#6d8587;margin:2px 0 14px;padding-left:2px}
+.service-list{display:grid;gap:15px}
+.service{border:1px solid #d8e5df;border-radius:24px;background:linear-gradient(180deg,#ffffff 0%,#fbfcfb 100%);box-shadow:0 12px 28px rgba(18,68,77,.08);overflow:hidden}
+.service:hover{transform:translateY(-2px)}
+.service-main{width:100%;display:grid;grid-template-columns:88px minmax(0,1fr) 18px;gap:14px;padding:14px;align-items:center;background:none;border:0;color:#25484e;text-align:left;cursor:pointer}
+.service-icon{width:88px;height:88px;min-width:88px;border-radius:20px;overflow:hidden;background:#dfeae6;box-shadow:inset 0 1px rgba(255,255,255,.8)}
+.service-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.service-text{display:block;min-width:0}
+.service-overline{display:block;font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#6d8b8f;margin-bottom:7px}
+.service-name{display:block;font:400 24px/1.05 'Playfair Display',Georgia,serif;color:#1f454b;letter-spacing:-.03em}
+.service-preview{display:block;font:500 12px/1.5 'DM Sans',sans-serif;color:#5d7678;margin-top:7px}
+.service-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.service-meta span{display:inline-flex;align-items:center;min-height:28px;padding:6px 10px;border-radius:999px;background:#eff5f3;color:#29525a;font:700 11px/1 'DM Sans',sans-serif;border:1px solid #dbe7e2}
+.service-arrow{font-size:28px;color:#6f8b8e;align-self:center;transition:transform .2s}
+.service.is-expanded .service-arrow{transform:rotate(90deg);color:#1d5a62}
+.service-extra{display:none;padding:0 14px 16px 14px}
+.service.is-expanded .service-extra{display:block}
+.service-extra-inner{border-top:1px solid #e6eeea;padding-top:14px;margin-left:102px}
+.service-description{font:400 13px/1.65 'DM Sans',sans-serif;color:#557072;margin:0 0 13px}
+.service-select{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;background:linear-gradient(135deg,#1e5c62,#2a7479);color:#fff;padding:13px 16px;font:700 13px 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 10px 18px rgba(28,90,98,.22)}
+.service-select:hover{filter:brightness(1.03)}
+.detail-piece{width:100%;height:220px;border-radius:28px;overflow:hidden;border:1px solid #dbe7e2;background:#eff4f2;margin:8px 0 18px}
+.detail-piece img{width:100%;height:100%;object-fit:cover}
+.detail-card-title{font:400 34px/1.02 'Playfair Display',Georgia,serif;color:#1c4349;margin:6px 0 8px;letter-spacing:-.04em}
+.detail-sub{font:700 10px/1 'DM Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#6d8a8e}
+.detail-info{border:1px solid #dde8e3;border-radius:18px;padding:16px;background:#fafcfb}
+.detail-info strong{color:#6b8789}
+.detail-info p{color:#4e686b}
+.booking-empty{padding:25px;text-align:center;color:#6d8486;font-size:13px;border:1px dashed #d8e5df;border-radius:18px;background:#fff}
+@media(max-width:430px){
+ .service-main{grid-template-columns:76px minmax(0,1fr) 16px;padding:12px}
+ .service-icon{width:76px;height:76px;min-width:76px;border-radius:18px}
+ .service-name{font-size:21px}
+ .service-preview{font-size:11px}
+ .service-extra-inner{margin-left:0}
+ .service-select{width:100%}
+ .detail-piece{height:188px}
+}
+
+
+/* Edição 4: navegação editorial Blue Piercer */
+.booking-catalog{padding-top:28px}
+.booking-cats{grid-auto-columns:134px;gap:9px;margin:0 -18px 15px;padding:1px 18px 15px;scroll-snap-type:x proximity}
+.booking-cat{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:5px;min-height:84px;scroll-snap-align:start;position:relative;overflow:hidden;padding:13px 13px 12px;background:#fff;color:#315c60;border:1px solid #d9e5df;border-radius:17px;text-align:left;box-shadow:0 5px 16px #16474a0d;letter-spacing:normal}
+.booking-cat.active{background:#1f5c63;color:#fff;border-color:#1f5c63;box-shadow:0 11px 22px #1c525b30}
+.booking-cat-index{font:500 10px/1 'DM Sans',sans-serif;letter-spacing:.14em;opacity:.55}
+.booking-cat-label{font:500 17px/1.05 'Playfair Display',Georgia,serif;letter-spacing:-.03em;white-space:normal;max-width:100%}
+.booking-cat-count{position:absolute;right:12px;top:10px;font:700 10px/1 'DM Sans',sans-serif;opacity:.66}
+.booking-image-note{font:400 11px/1.55 'DM Sans',sans-serif;color:#70898a;margin:0 0 15px;padding:0 3px}
+.booking-image-note[hidden]{display:none}
+.booking-count{font-weight:700;color:#36676b;margin-bottom:7px}
+.service-main{grid-template-columns:92px minmax(0,1fr) 15px;gap:15px}
+.service-icon{height:98px;width:92px;min-width:92px;border-radius:18px;background:#e4ece9}
+.service-icon img{object-position:center;width:100%;height:100%}
+.service-name{font-size:21px;line-height:1.13;font-weight:500}
+.service-preview{line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.service-meta{margin-top:8px}
+.service-meta span{font-size:10px}
+.service-extra-inner{margin-left:107px}
+@media(max-width:430px){.booking-cats{grid-auto-columns:126px}.booking-cat{min-height:80px}.service-main{grid-template-columns:82px minmax(0,1fr) 13px;gap:10px;padding:10px}.service-icon{width:82px;min-width:82px;height:100px;border-radius:16px}.service-name{font-size:19px}.service-extra-inner{margin-left:0}.booking-catalog{padding-left:14px;padding-right:14px}}
+@media(prefers-reduced-motion:reduce){.booking-cat,.service{transition:none!important}}
+
+
+/* Miniaturas do catálogo: pequenas, consistentes e sem fotografias repetidas */
+.service-main{grid-template-columns:72px minmax(0,1fr) 14px;gap:13px;padding:12px}
+.service-icon{width:72px!important;min-width:72px!important;height:72px!important;border-radius:16px;background:#dcebe6}
+.service-icon img{width:100%!important;height:100%!important;object-fit:cover;display:block}
+.service-extra-inner{margin-left:85px}
+.service-name{font-size:20px}
+.service-preview{font-size:11px}
+.detail-piece{height:170px;max-width:200px;margin:12px auto 18px;border-radius:24px}
+@media(max-width:430px){.service-main{grid-template-columns:62px minmax(0,1fr) 12px;gap:10px;padding:11px}.service-icon{width:62px!important;min-width:62px!important;height:62px!important;border-radius:13px}.service-name{font-size:18px}.service-extra-inner{margin-left:0}.service-preview{font-size:10.5px}.service-meta span{font-size:10px}.detail-piece{height:145px;max-width:160px}}
+
+/* Ajuste solicitado: catálogo mais compacto, sem numeração, contadores ou resumos genéricos */
+.booking-catalog{padding-top:20px}
+.booking-cats{display:flex;gap:7px;margin:0 -18px 13px;padding:1px 18px 9px;overflow-x:auto;scroll-snap-type:x proximity}
+.booking-cat{display:inline-flex;flex:0 0 auto;min-height:40px;height:40px;padding:0 14px;justify-content:center;align-items:center;gap:0;border-radius:12px;font:600 12px/1 'DM Sans',sans-serif;letter-spacing:0;white-space:nowrap;box-shadow:none;text-align:center}
+.booking-cat.active{box-shadow:0 4px 11px #15434a20}
+.booking-count{display:none!important}
+.service-list{gap:9px}
+.service{border-radius:17px;box-shadow:0 5px 15px #16474a0c}
+.service-main{grid-template-columns:54px minmax(0,1fr) 12px;gap:10px;padding:9px 11px;min-height:76px}
+.service-icon{width:54px!important;min-width:54px!important;height:54px!important;border-radius:12px}
+.service-name{font-size:17px;line-height:1.16;letter-spacing:-.015em}
+.service-overline,.service-preview{display:none!important}
+.service-meta{margin-top:6px;gap:5px}
+.service-meta span{padding:5px 8px;min-height:22px;font-size:10px}
+.service-arrow{font-size:21px}
+.service-extra{padding:0 11px 12px}
+.service-extra-inner{margin-left:64px;padding-top:10px}
+.booking-image-note{margin-bottom:12px;font-size:10px;line-height:1.5}
+@media(max-width:430px){
+ .booking-catalog{padding-left:13px;padding-right:13px;padding-top:17px}
+ .booking-cats{margin-left:-13px;margin-right:-13px;padding-left:13px;padding-right:13px}
+ .booking-cat{min-height:38px;height:38px;padding:0 12px;font-size:11px;border-radius:11px}
+ .service-main{grid-template-columns:49px minmax(0,1fr) 11px;gap:9px;padding:9px;min-height:69px}
+ .service-icon{width:49px!important;min-width:49px!important;height:49px!important;border-radius:11px}
+ .service-name{font-size:16px}
+ .service-meta span{font-size:9px;padding:5px 7px}
+ .service-extra-inner{margin-left:0}
+}
+
+/* Blue Piercer boutique: visual exclusivo para a tela interna, sem modificar linkbio */
+.booking-view{background:#f8f4ef;color:#234e52}
+.booking-inner{background:#f8f4ef;max-width:660px}
+.booking-top{background:#205a62;color:#fff1e6;border-bottom:1px solid #ffffff25;padding:14px 18px 13px;backdrop-filter:none;-webkit-backdrop-filter:none}
+.booking-brand{color:#fff0e5;font-size:27px}
+.booking-kicker{color:#c4dedb;font-size:8px;letter-spacing:.21em}
+.booking-step{color:#dfede9;font-size:9px;letter-spacing:.12em}
+.booking-back{background:#ffffff18;border:1px solid #ffffff58;color:#fff6eb;width:36px;height:36px}
+.booking-back:hover{background:#ffffff30}
+.booking-catalog{padding:0 18px 36px!important}
+.booking-hero{background:#205a62;color:#fff1e7;padding:24px 19px 22px;margin:0 -18px 20px;border-radius:0 0 24px 24px;position:relative;overflow:hidden}
+.booking-hero:after{content:'';position:absolute;right:-48px;bottom:-103px;width:190px;height:190px;border:1px solid #ffffff19;border-radius:50%;pointer-events:none;box-shadow:0 0 0 36px #ffffff06,0 0 0 72px #ffffff04}
+.booking-hero .booking-label{font-size:9px;letter-spacing:.22em;color:#b9d6d1;margin:0 0 8px}
+.booking-hero .booking-title{color:#fff0e6;font:400 clamp(33px,8vw,46px)/1.03 'Italiana',Georgia,serif;letter-spacing:-.025em;max-width:420px;margin:0 0 9px}
+.booking-hero .booking-desc{color:#e1ece7;font-size:11px;line-height:1.6;margin:0;max-width:340px}
+.booking-hero-rule{display:flex;align-items:center;gap:10px;max-width:160px;margin-top:16px;color:#f9e8d8}
+.booking-hero-rule span{height:1px;flex:1;background:linear-gradient(90deg,#ffffff15,#fff4d8a8)}
+.booking-hero-rule span:last-child{transform:rotate(180deg)}
+.booking-hero-rule svg{width:19px;height:19px}
+.booking-search{border:1px solid #dce8e1;background:#fff;border-radius:16px;box-shadow:0 6px 19px #194e500b;margin-bottom:18px;transition:box-shadow .2s,border-color .2s}
+.booking-search:focus-within{border-color:#2e777e;box-shadow:0 0 0 3px #2e777e19}
+.booking-search input{font-size:12px;padding:13px 0}
+.booking-cats{display:flex;align-items:stretch;gap:21px;margin:0 -18px 13px!important;padding:0 18px 0!important;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity;border-bottom:1px solid #dbe4df}
+.booking-cat{flex:0 0 auto;position:relative;display:flex;align-items:center;justify-content:center;min-height:40px;height:40px;padding:0 0 12px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#879997!important;white-space:nowrap;font:500 12px 'DM Sans',sans-serif!important;letter-spacing:.015em;box-shadow:none!important;scroll-snap-align:start;transition:color .2s}
+.booking-cat:after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:#21676e;transform:scaleX(0);opacity:0;transform-origin:center;transition:transform .25s,opacity .25s;border-radius:3px}
+.booking-cat:hover{color:#2e656b!important;transform:none}
+.booking-cat.active{color:#205d63!important;font-weight:700!important}
+.booking-cat.active:after{transform:scaleX(1);opacity:1}
+.booking-image-note{font-size:10px;line-height:1.5;color:#82918e;margin:12px 0 13px;padding:0 1px}
+.service-list{gap:8px}
+.service{border-radius:16px;border:1px solid #e0e9e4;background:#fff;box-shadow:0 4px 14px #234c4e09;transition:border-color .22s,box-shadow .22s,transform .22s}
+.service:hover{border-color:#b6d4ce;box-shadow:0 7px 19px #234c4e12;transform:translateY(-1px)!important}
+.service-main{grid-template-columns:52px minmax(0,1fr) 15px;gap:12px;min-height:72px;padding:10px 12px}
+.service-icon{width:52px!important;min-width:52px!important;height:52px!important;border-radius:13px;background:#dceae5;overflow:hidden}
+.service-icon img{width:100%;height:100%;object-fit:cover}
+.service-name{font:500 18px/1.12 'Playfair Display',Georgia,serif!important;letter-spacing:-.02em;color:#224c50}
+.service-meta{margin-top:7px;gap:10px;align-items:center}
+.service-meta span{font:600 10px/1.15 'DM Sans',sans-serif;color:#6c8786;background:transparent;border:0;border-radius:0;padding:0;min-height:auto}
+.service-meta span+span{color:#2c7677}
+.service-meta span+span:before{content:'·';color:#bacbc5;margin-right:9px}
+.service-arrow{font-family:'DM Sans',sans-serif;font-size:21px;color:#6c9897}
+.service.is-expanded{border-color:#a6c9c3;box-shadow:0 8px 24px #24535616}
+.service-extra{background:#fff;padding:0 12px 13px}
+.service-extra-inner{margin-left:64px;padding-top:12px}
+.service-description{font-size:12px;line-height:1.6}
+.service-select{min-height:40px;border-radius:11px;font-size:12px;padding:10px 12px;background:#215d64;box-shadow:none}
+.service-select:hover{background:#2b747a}
+.booking-detail{padding-top:24px}
+.booking-detail .booking-title{font-size:35px;line-height:1.07}
+.booking-detail .booking-cta{border-radius:14px}
+.booking-view button:focus-visible,.booking-view a:focus-visible,.booking-view input:focus-visible{outline:2px solid #3e8b8a;outline-offset:3px}
+@media(max-width:430px){
+ .booking-top{padding:11px 14px}
+ .booking-catalog{padding:0 14px 32px!important}
+ .booking-hero{margin:0 -14px 17px;padding:22px 17px 20px;border-radius:0 0 21px 21px}
+ .booking-hero .booking-title{font-size:37px}
+ .booking-cats{gap:18px;margin-left:-14px!important;margin-right:-14px!important;padding-left:14px!important;padding-right:14px!important}
+ .booking-cat{font-size:11px!important}
+ .service-main{grid-template-columns:45px minmax(0,1fr) 13px;gap:9px;min-height:65px;padding:9px 10px}
+ .service-icon{height:45px!important;width:45px!important;min-width:45px!important;border-radius:11px}
+ .service-name{font-size:16px!important}
+ .service-meta{gap:7px;margin-top:5px}
+ .service-meta span{font-size:9px}
+ .service-meta span+span:before{margin-right:6px}
+ .service-extra-inner{margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){.booking-cat:after,.service{transition:none!important}}
+
+
+/* Solicitação personalizada pelo WhatsApp — nome obrigatório */
+.booking-whatsapp-form{display:grid;gap:9px;margin-top:17px}
+.booking-field-label{display:block;font:600 12px/1.4 'DM Sans',sans-serif;color:#315e63}
+#bookingCustomerName{width:100%;height:50px;padding:12px 15px;border:1px solid #cfdfd9;border-radius:14px;background:#fff;color:#193f46;font:500 15px 'DM Sans',sans-serif;outline:none;transition:border-color .18s,box-shadow .18s}
+#bookingCustomerName:focus{border-color:#2a777a;box-shadow:0 0 0 3px rgba(42,119,122,.12)}
+#bookingCustomerName[aria-invalid="true"]{border-color:#b85858;box-shadow:0 0 0 3px rgba(184,88,88,.08)}
+.booking-field-error{font:500 11px/1.3 'DM Sans',sans-serif;color:#a53c3c;margin:0;min-height:0}
+.booking-field-error:empty{display:none}
+.booking-whatsapp-cta{cursor:pointer;min-height:52px;box-shadow:0 10px 24px rgba(22,77,80,.2);border-radius:14px}
+.booking-whatsapp-cta svg{flex:none}
+
+
+/* Etapa final editorial · Blue Piercer */
+.booking-detail{padding:0!important;background:#f8f4ef;color:#244d50}
+.detail-editorial-hero{background:linear-gradient(135deg,#205960 0%,#16454c 100%);color:#fbeddf;padding:24px 22px 20px;position:relative;overflow:hidden}
+.detail-editorial-hero:before{content:"";position:absolute;right:-70px;top:-130px;width:330px;height:330px;border:1px solid rgba(245,227,209,.13);border-radius:50%;pointer-events:none}
+.detail-editorial-top,.detail-hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:13px}
+.detail-overline,.detail-edition,.detail-hero-bottom{font:600 9px/1.5 'DM Sans',sans-serif;letter-spacing:.18em;color:#d7ece5}
+.detail-overline-dot{padding:0 5px;color:#e4bca9}.detail-edition{opacity:.6}
+.detail-editorial-grid{display:grid;grid-template-columns:minmax(0,1fr) 123px;gap:15px;align-items:center;margin:19px 0 22px;position:relative}
+.detail-category-line{font:600 10px/1.4 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#d8c0b5;margin-bottom:10px}
+.booking-detail .detail-card-title{color:#fff3e5!important;font:400 clamp(27px,6.1vw,39px)/1.06 'Italiana','Playfair Display',serif!important;letter-spacing:-.012em;margin:0 0 9px!important;overflow-wrap:anywhere}
+.detail-mantra{font:italic 400 13px/1.5 'Playfair Display',serif;color:#d9eeea;margin:0}
+.booking-detail .detail-piece{width:123px!important;max-width:123px!important;height:144px!important;margin:0!important;border:1px solid #f3e3d66b!important;border-radius:75px 75px 18px 18px!important;background:#e2f0e9!important;overflow:hidden;box-shadow:0 12px 30px #092b3340;transform:rotate(4deg)}
+.booking-detail .detail-piece img{width:100%;height:100%;object-fit:cover}
+.detail-hero-bottom{font-size:8px;justify-content:flex-start;color:#d7e5e0ad}.detail-hero-line{height:1px;flex:1;max-width:100px;background:linear-gradient(90deg,#f6d8ca,#ffffff00)}
+.detail-editorial-body{padding:24px 22px 34px}
+.detail-section-kicker{display:flex;gap:10px;align-items:center;font:700 10px/1.4 'DM Sans',sans-serif;letter-spacing:.17em;color:#1f5c63}
+.detail-section-kicker>span{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#e3eeea;color:#2e7376;letter-spacing:0;font-size:10px}
+.detail-description{font:400 13px/1.7 'DM Sans',sans-serif;color:#607777;margin:13px 0 20px;max-width:550px}
+.detail-facts{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 0;border-top:1px solid #dbe5e0;border-bottom:1px solid #dbe5e0}
+.detail-fact-label{font:700 9px/1.2 'DM Sans',sans-serif;letter-spacing:.17em;color:#819490}
+.detail-fact-value{font:500 17px/1.4 'Playfair Display',Georgia,serif;color:#215960;margin-top:5px}
+.detail-facts svg{width:24px;height:24px;flex:0 0 auto;color:#4f8a87}
+.detail-reference-note{font:400 10px/1.55 'DM Sans',sans-serif;color:#8a9690;margin:12px 0 26px}
+.detail-step-two{margin-bottom:16px}
+.booking-detail .booking-whatsapp-form{margin:0}
+.booking-detail .booking-field-label{font:500 14px 'Playfair Display',Georgia,serif!important;color:#24585d;display:block;margin-bottom:9px}
+.booking-detail #bookingCustomerName{min-height:55px;border:0;border-bottom:1.5px solid #88aba7!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;font-size:16px;padding:13px 4px!important;outline:0;color:#20545a;width:100%;transition:border-color .2s}
+.booking-detail #bookingCustomerName:focus{border-bottom-color:#205c63!important}
+.booking-detail #bookingCustomerName::placeholder{color:#9baaaa}
+.booking-detail .booking-whatsapp-cta{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:20px;min-height:55px;padding:14px 17px;background:#205d63!important;color:white!important;border-radius:13px!important;font-size:13px;box-shadow:0 12px 20px #1b5b6320}
+.booking-detail .detail-submit-arrow{margin-left:auto;width:18px;height:18px;flex:0 0 18px}
+.booking-detail .booking-whatsapp-cta>svg:first-child{flex:0 0 20px}
+.booking-detail .booking-note{color:#7c9391;margin:14px 6px 0!important;text-align:center;font-size:10px;line-height:1.6}
+@media(max-width:430px){.detail-editorial-hero{padding:19px 17px 18px}.detail-editorial-body{padding:22px 18px 32px}.detail-editorial-grid{grid-template-columns:minmax(0,1fr) 103px;gap:12px;margin:15px 0 18px}.booking-detail .detail-piece{width:103px!important;max-width:103px!important;height:124px!important}.booking-detail .detail-card-title{font-size:31px!important}.detail-fact-value{font-size:15px}}
+
+
+/* Etapa final minimalista: somente procedimento, valor, nome e ação. */
+.booking-detail{padding:0!important;background:#f8f5f0!important;color:#254e53}
+.clean-detail{max-width:540px;margin:0 auto;padding:32px 21px 48px}
+.clean-heading{display:flex;justify-content:space-between;align-items:center;margin:0 0 20px;gap:10px}
+.clean-category,.clean-caption{font:700 10px/1.5 'DM Sans',sans-serif;letter-spacing:.17em;text-transform:uppercase;color:#5b8384}
+.clean-caption{color:#9aa9a4;font-size:9px}
+.clean-selection{display:flex;align-items:center;gap:17px;padding:0 0 21px;border-bottom:1px solid #d7e4df}
+.booking-detail .detail-piece{width:84px!important;height:94px!important;max-width:84px!important;min-width:84px!important;border:0!important;border-radius:18px!important;transform:none!important;margin:0!important;box-shadow:none!important;background:#e2eeea!important;overflow:hidden}
+.booking-detail .detail-piece img{width:100%;height:100%;object-fit:cover}
+.clean-selection-copy{min-width:0;flex:1}
+.booking-detail .detail-card-title{color:#1f555a!important;font:400 clamp(24px,6vw,31px)/1.08 'Playfair Display',Georgia,serif!important;letter-spacing:-.025em!important;margin:0 0 11px!important;overflow-wrap:break-word}
+.clean-price{color:#6e8988;font:500 12px/1.5 'DM Sans',sans-serif;margin:0}
+.clean-hidden{display:none!important}
+.clean-description{border-bottom:1px solid #d7e4df;padding:15px 1px;margin-bottom:23px}
+.clean-description summary{display:flex;justify-content:space-between;cursor:pointer;list-style:none;color:#37686c;font:600 12px 'DM Sans',sans-serif}
+.clean-description summary::-webkit-details-marker{display:none}
+.clean-description summary span{font-size:18px;line-height:12px}
+.clean-description[open] summary span{transform:rotate(180deg)}
+.clean-description p{font:400 12px/1.65 'DM Sans',sans-serif;color:#60797a;margin:13px 0 0}
+.clean-description .clean-disclaimer{font-size:10px;color:#879896;margin-top:7px}
+.booking-detail .booking-whatsapp-form{margin:0!important}
+.booking-detail .booking-field-label{display:block;font:600 12px 'DM Sans',sans-serif!important;color:#295e63!important;margin:0 0 9px!important}
+.booking-detail #bookingCustomerName{min-height:51px!important;width:100%;background:#fff!important;border:1px solid #d5e4df!important;border-radius:13px!important;padding:12px 15px!important;font:500 15px 'DM Sans',sans-serif!important;box-shadow:none!important}
+.booking-detail #bookingCustomerName:focus{border-color:#44878a!important;outline:2px solid #c4e0dc;outline-offset:1px}
+.booking-detail #bookingCustomerName::placeholder{color:#9aaca8}
+.booking-detail .booking-whatsapp-cta{width:100%;margin-top:13px!important;min-height:52px!important;border-radius:13px!important;box-shadow:none!important;background:#215f66!important;font:600 14px 'DM Sans',sans-serif!important}
+.booking-detail .booking-whatsapp-cta:hover{background:#174e55!important}
+.booking-detail .detail-submit-arrow{width:17px;height:17px;margin-left:auto}
+@media(max-width:370px){.clean-detail{padding:24px 15px 35px}.booking-detail .detail-piece{width:69px!important;min-width:69px!important;max-width:69px!important;height:80px!important}.clean-selection{gap:12px}.booking-detail .detail-card-title{font-size:23px!important}}
+
+
+/* Revisão final 13/11: cabeçalho centralizado e ajustes de ergonomia */
+.booking-hero{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;min-height:200px;padding:26px 22px 22px;
+}
+.booking-hero .booking-label{position:relative;z-index:1;text-align:center;margin:0 auto 10px}
+.booking-hero .booking-title{position:relative;z-index:1;text-align:center;max-width:510px;margin:0 auto 10px;
+  text-wrap:balance;overflow-wrap:normal}
+.booking-hero .booking-desc{position:relative;z-index:1;max-width:340px;text-align:center;margin:0 auto;line-height:1.65}
+.booking-hero-rule{position:relative;z-index:1;justify-content:center;align-self:center;width:165px;max-width:65%;margin:19px auto 0}
+.booking-hero::after{opacity:.36;right:-92px;bottom:-115px}
+.booking-search input{min-width:0}
+.booking-cats{overscroll-behavior-x:contain}
+.service-main{width:100%;min-width:0}
+.service-text{min-width:0}
+.service-name{overflow-wrap:break-word}
+.service-main:focus-visible,.booking-cat:focus-visible{outline:2px solid #26777a;outline-offset:2px}
+.service-icon img,.detail-piece img{display:block}
+.booking-detail .clean-description summary:focus-visible{outline:2px solid #26777a;outline-offset:3px;border-radius:4px}
+@media(max-width:430px){
+  .booking-hero{padding:25px 22px 23px;min-height:194px}
+  .booking-hero .booking-title{font-size:clamp(32px,8.7vw,39px);line-height:1.08}
+  .booking-hero .booking-desc{max-width:300px;font-size:11px}
+}
+@media(max-width:350px){.booking-hero{padding-inline:17px}.booking-hero .booking-title{font-size:31px}}
+@media(prefers-reduced-motion:reduce){.booking-cat,.service,.booking-search{transition:none!important}}
+
+</style>
+</head>
+<body>
+<main class="shell"><div class="jewel-atmosphere" aria-hidden="true"><div class="jewel-sprite"><img src="assets/piercing-flor.webp" alt=""></div><div class="jewel-sprite"><img src="assets/piercing-estrela.webp" alt=""></div><div class="jewel-sprite"><img src="assets/piercing-argola.webp" alt=""></div><div class="jewel-sprite"><img src="assets/piercing-cristal.webp" alt=""></div><div class="jewel-sprite"><img src="assets/piercing-barbell.webp" alt=""></div></div><div class="content">
+<header class="reveal"><div class="eyebrow">Body piercing</div><div class="portrait-orbit"><img class="portrait" src="assets/avatar-original.webp" alt="Profissional da Blue Piercer" /><span class="orbit-ring orbit-ring-a" aria-hidden="true"></span><span class="orbit-ring orbit-ring-b" aria-hidden="true"></span><span class="verified-badge" role="img" aria-label="Selo azul decorativo de verificação"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#2585F6" d="M12 1.4 14.6 3l3-.1 1.5 2.6 2.7 1.6-.1 3L23 12l-1.3 2.6.1 3-2.7 1.6-1.5 2.6-3-.1L12 23l-2.6-1.3-3 .1-1.5-2.6-2.7-1.6.1-3L1 12l1.3-2.6-.1-3 2.7-1.6 1.5-2.6 3 .1Z"/><path d="m7.4 12.2 3.1 3.1 6.3-6.5" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div><h1>Blue Piercer</h1><p class="tagline">piercing com estilo, delicadeza e segurança</p></header>
+<div class="ornament reveal delay1" aria-hidden="true"><span class="ornament-line left"></span><span class="ornament-core" id="ornamentCore"><img src="assets/01_anel_captive.webp" alt="" draggable="false"></span><span class="ornament-line right"></span></div>
+<nav class="links reveal delay2" aria-label="Ações principais">
+<a class="link primary" href="#agendamento" id="openBooking" aria-label="Abrir catálogo de serviços para agendar"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M9 15l2 2 4-4"/></svg><span>Agendar sessão</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m9 5 7 7-7 7"/></svg></a>
+</nav>
+<section class="reveal delay3" id="portfolio" aria-label="Galeria dos trabalhos Blue Piercer">
+<div class="gallery-header">Um pouquinho do meu trabalho</div>
+<div class="marquee-window" aria-label="Fotos dos trabalhos passando da direita para a esquerda; toque em uma foto para abrir o Instagram">
+<div class="marquee-track"><div class="marquee-set"><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/ear-detail.webp" alt="Composição de piercings na orelha" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/ear-stack.webp" alt="Piercings delicados na orelha" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/ear-gems.webp" alt="Joias coloridas na orelha" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/ear.webp" alt="Piercing com detalhe metálico" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/jewel.webp" alt="Joia exclusiva para piercing" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/septum.webp" alt="Piercing de septo" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/lip.webp" alt="Piercing nos lábios" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/gold.webp" alt="Piercing dourado" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Ver trabalhos da Blue Piercer no Instagram"><img src="assets/silver.webp" alt="Joia cromada" loading="lazy" decoding="async"></a></div><div class="marquee-set" aria-hidden="true"><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/ear-detail.webp" alt="Composição de piercings na orelha" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/ear-stack.webp" alt="Piercings delicados na orelha" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/ear-gems.webp" alt="Joias coloridas na orelha" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/ear.webp" alt="Piercing com detalhe metálico" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/jewel.webp" alt="Joia exclusiva para piercing" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/septum.webp" alt="Piercing de septo" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/lip.webp" alt="Piercing nos lábios" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/gold.webp" alt="Piercing dourado" loading="lazy" decoding="async"></a><a class="marquee-photo" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" tabindex="-1"><img src="assets/silver.webp" alt="Joia cromada" loading="lazy" decoding="async"></a></div></div>
+</div><div class="portfolio-hint">Toque nas fotos para conhecer mais no Instagram</div></section>
+<div class="perks reveal delay4" aria-label="Destaques"><div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21S3 15 3 9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 12-9 12Z"/></svg>Seu estilo,<br>sua essência</div><div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 5-6h8l5 6-9 12L3 9ZM3 9h18M8 3l4 6 4-6M12 9v12"/></svg>Joias com<br>personalidade</div><div class="perk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>Carinho em<br>cada detalhe</div></div>
+<footer class="footer"><div class="footer-social" aria-label="Redes e localização">
+<a class="social-icon" href="https://www.instagram.com/blue.piercer/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Blue Piercer" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg></a>
+<a class="social-icon" href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Piercer+Uberaba" target="_blank" rel="noopener noreferrer" aria-label="Localização no Google Maps" title="Localização"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg></a></div>Seu brilho, sua essência · Blue Piercer</footer>
+</div></main>
+
+
+<aside class="booking-view" id="bookingView" role="dialog" aria-modal="true" aria-label="Agendamento Blue Piercer" aria-hidden="true" inert>
+<div class="booking-inner">
+ <div class="booking-top"><button type="button" class="booking-back" id="bookingBack" aria-label="Voltar"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button><div><div class="booking-brand">Blue Piercer</div><div class="booking-kicker">Escolha seu procedimento</div></div><span class="booking-top-spacer"></span><span class="booking-step" id="bookingStep">SERVIÇOS</span></div>
+ <section class="booking-catalog" id="bookingCatalog">
+  <div class="booking-hero"><div class="booking-label">SEU MOMENTO, SEU ESTILO</div><h2 class="booking-title">Sua próxima joia começa aqui.</h2><p class="booking-desc">Encontre seu procedimento, confira os detalhes e selecione o atendimento.</p><div class="booking-hero-rule" aria-hidden="true"><span></span><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M22.5 8.5a10 10 0 1 0 1.3 12"/><circle cx="23" cy="7" r="2.2"/><circle cx="21.5" cy="22" r="1.8"/></svg><span></span></div></div>
+  <label class="booking-search"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input id="bookingSearch" autocomplete="off" placeholder="Qual procedimento procura?" aria-label="Buscar serviço"></label>
+  <div class="booking-cats" id="bookingCategories" role="tablist" aria-label="Categorias de atendimento"></div>
+  <div class="booking-count" id="bookingCount"></div><p class="booking-image-note" id="bookingImageNote">Ilustrações de referência, não fotos de resultados. O local e a joia são definidos com a profissional.</p><div class="service-list" id="bookingServices"></div>
+ </section>
+ <section class="booking-detail" id="bookingDetail">
+  <div class="clean-detail">
+   <div class="clean-heading"><span id="detailCategory" class="clean-category"></span><span class="clean-caption">BLUE PIERCER</span></div>
+   <div class="clean-selection">
+    <div class="detail-piece"><img id="detailImage" src="assets/img-lobulo.webp" alt="Ilustração do procedimento selecionado"></div>
+    <div class="clean-selection-copy"><h2 class="booking-title detail-card-title" id="detailName"></h2><p id="detailIntro" class="clean-hidden" aria-hidden="true"></p><p id="detailPricing" class="clean-price"></p></div>
+   </div>
+   <details class="clean-description"><summary>Sobre o procedimento <span aria-hidden="true">⌄</span></summary><p id="detailDescription"></p><p class="clean-disclaimer">Imagem ilustrativa. A joia e o local exato dependem da avaliação profissional.</p></details>
+   <form id="bookingWhatsappForm" class="booking-whatsapp-form" novalidate>
+    <label for="bookingCustomerName" class="booking-field-label">Seu nome</label>
+    <input type="text" id="bookingCustomerName" name="nome" placeholder="Como podemos chamar você?" autocomplete="name" maxlength="90" required aria-describedby="bookingNameError" />
+    <p id="bookingNameError" class="booking-field-error" role="alert" aria-live="polite"></p>
+    <button type="submit" id="bookingFinish" class="booking-cta booking-whatsapp-cta"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.04 2A9.93 9.93 0 0 0 3.5 17.04L2 22l5.09-1.45A10 10 0 1 0 12.04 2Zm0 18.22a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.02.86.9-2.93-.2-.32a8.21 8.21 0 1 1 6.8 3.71Zm4.51-6.16c-.25-.12-1.48-.73-1.71-.82-.23-.08-.4-.12-.56.13-.17.25-.65.82-.8.99-.15.17-.29.18-.54.06-.25-.12-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31s-.87.85-.87 2.07.89 2.41 1.01 2.57c.13.17 1.76 2.69 4.27 3.78.6.26 1.07.42 1.44.53.61.2 1.17.17 1.61.1.49-.07 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg><span>Solicitar horário</span><svg class="detail-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 14 0m-6-6 6 6-6 6"/></svg></button>
+   </form>
+  </div>
+ </section>
+</div></aside>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script>
+// Cada imagem representa uma joia independente, com transparência real.
+// No máximo duas joias visíveis ao mesmo tempo. Sem flash nem posições fixas repetidas.
+window.addEventListener('load', () => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function animateOrbitRings(){
+    if (!window.gsap)return;
+    gsap.to('.orbit-ring-a',{rotation:'+=360',duration:19,repeat:-1,ease:'none',transformOrigin:'50% 50%'});
+    gsap.to('.orbit-ring-b',{rotation:'-=360',duration:25,repeat:-1,ease:'none',transformOrigin:'50% 50%'});
+  }
+  animateOrbitRings();
+
+  const piercingIcons = [
+    "assets/01_anel_captive.webp",
+    "assets/02_ferradura.webp",
+    "assets/03_barbell_curvo.webp",
+    "assets/04_labret.webp",
+    "assets/05_labret_diamante.webp",
+    "assets/06_curvo_pedras.webp",
+    "assets/07_anel_spike.webp",
+    "assets/08_barbell_reto.webp",
+    "assets/09_piercing_coracao.webp",
+    "assets/10_argola_hinged.webp"
+  ];
+
+  function initOrnamentSwitcher(){
+    const ornamentCore = document.getElementById('ornamentCore');
+    if(!ornamentCore) return;
+    let iconIndex = 0;
+    ornamentCore.innerHTML = `<img src="${piercingIcons[iconIndex]}" alt="" draggable="false">`;
+    const swap = () => {
+      iconIndex = (iconIndex + 1) % piercingIcons.length;
+      if(window.gsap){
+        gsap.timeline()
+          .to(ornamentCore,{opacity:0,y:-4,scale:.88,duration:.18,ease:'power1.in',onStart:()=>ornamentCore.classList.add('is-changing')})
+          .add(()=>{ornamentCore.innerHTML = `<img src="${piercingIcons[iconIndex]}" alt="" draggable="false">`;})
+          .to(ornamentCore,{opacity:1,y:0,scale:1,duration:.26,ease:'back.out(2)',onComplete:()=>ornamentCore.classList.remove('is-changing')});
+      } else {
+        ornamentCore.innerHTML = `<img src="${piercingIcons[iconIndex]}" alt="" draggable="false">`;
+      }
+    };
+    setInterval(swap, 1000);
+  }
+  initOrnamentSwitcher();
+
+  const shell = document.querySelector('.shell');
+  const jewels = [...document.querySelectorAll('.jewel-sprite')];
+  const active = new Map();
+  const lastPositions = new Map();
+  // Os adornos fazem parte do fundo, nunca da camada de conteúdo.
+  const protectSelectors = '.eyebrow,.portrait-orbit,h1,.tagline,.location,.ornament,.links,.gallery-header,.marquee-window,.portfolio-hint,.perks,.footer';
+  let forbidden = [];
+  function updateProtectedAreas(){
+    const shellRect = shell.getBoundingClientRect();
+    forbidden = [...document.querySelectorAll(protectSelectors)].map(node => {
+      const r = node.getBoundingClientRect();
+      const buffer = node.matches('.marquee-window,.portrait-orbit,.links') ? 10 : 5;
+      return {left:r.left-shellRect.left-buffer,right:r.right-shellRect.left+buffer,top:r.top-shellRect.top-buffer,bottom:r.bottom-shellRect.top+buffer};
+    });
+  }
+  function touchesContent(x,y,size){
+    const movementReserve = 18;
+    return forbidden.some(r => x < r.right && x+size > r.left && y-movementReserve < r.bottom && y+size > r.top);
+  }
+  updateProtectedAreas();
+  window.addEventListener('resize', updateProtectedAreas, {passive:true});
+  if (!shell || !jewels.length) return;
+
+  function positionFor(item) {
+    const w = shell.clientWidth;
+    const h = shell.scrollHeight;
+    const size = item.getBoundingClientRect().width || 55;
+    const narrow = w < 650;
+    updateProtectedAreas();
+    // Em telas pequenas, as joias ficam nas laterais, com altura aleatória.
+    // Desktop: lados do conteúdo central, alternando com maior liberdade.
+    for (let attempt = 0; attempt < 180; attempt++) {
+      const side = Math.random() < .5 ? 0 : 1;
+      let x;
+      if (narrow) {
+        const edge = Math.max(4, Math.min(62, w * .17));
+        x = side === 0 ? Math.random()*edge : w-size-Math.random()*edge;
+      } else {
+        const sideZone = Math.max(size+10, (w-Math.min(w,410))/2);
+        x = side === 0 ? Math.random()*Math.max(1,sideZone-size) : w-sideZone+Math.random()*Math.max(1,sideZone-size);
+      }
+      const y = 20 + Math.random()*Math.max(1,h-size-40);
+      if(touchesContent(x,y,size)) continue;
+      const center = {x:x+size/2,y:y+size/2};
+      const prev=lastPositions.get(item);
+      if(prev && Math.hypot(prev.x-center.x,prev.y-center.y)<Math.min(160,h*.2)) continue;
+      let collide=false;
+      for (const other of active.values()) {
+        if(Math.hypot(other.x-center.x,other.y-center.y)<Math.max(76,size*1.8)){collide=true;break;}
+      }
+      if(!collide) {lastPositions.set(item,center);return {x,y,center};}
+    }
+    return null;
+  }
+
+  function animateOne(item) {
+    if(active.size>=(shell.clientWidth<620?2:3)) {gsap.delayedCall(.45+Math.random()*.5,()=>animateOne(item));return;}
+    const place=positionFor(item);
+    if(!place) {gsap.delayedCall(.65,()=>animateOne(item));return;}
+    active.set(item,place.center);
+    const rotation=gsap.utils.random(-19,19);
+    gsap.set(item,{x:place.x,y:place.y,rotation,opacity:0,scale:.94});
+    gsap.timeline({onComplete:()=>{
+      active.delete(item);
+      gsap.delayedCall(gsap.utils.random(.2,.8),()=>animateOne(item));
+    }})
+    .to(item,{opacity:.88,scale:1,duration:.45,ease:'power1.out'})
+    .to(item,{y:place.y-13,rotation:rotation+gsap.utils.random(-7,7),duration:2.15,ease:'sine.inOut'},'<')
+    .to(item,{opacity:0,duration:.65,ease:'power1.inOut'},'-=.65');
+  }
+
+  // Inicializações espaçadas: nunca nascem empilhadas.
+  let attempts=0;
+  function start(){
+    if (!window.gsap) {if(attempts++<60) setTimeout(start,120);return;}
+    jewels.forEach((item,index)=>gsap.delayedCall(index*.48+.15,()=>animateOne(item)));
+  }
+  start();
+});
+</script>
+
+<script>
+// Catálogo de navegação baseado na captura enviada pelo cliente.
+// Valores e descrições que não puderam ser lidos com certeza NÃO são inventados.
+const BLUE_SERVICES = [
+ ['Emergência','Emergência'],
+ ['Perfurações','Perfuração de Lóbulos Auriculares'],
+ ['Perfurações','Perfuração de Nariz'],
+ ['Perfurações','Perfuração Anti-Hélix (Forward Helix)'],
+ ['Perfurações','Perfuração Ashley'],
+ ['Perfurações','Perfuração Bridge'],
+ ['Perfurações','Perfuração Conch'],
+ ['Perfurações','Perfuração Conch Rim'],
+ ['Perfurações','Perfuração Daith'],
+ ['Perfurações','Perfuração Hélix'],
+ ['Perfurações','Perfuração Faux Rook'],
+ ['Perfurações','Perfuração Flat'],
+ ['Perfurações','Perfuração Hidden Hélix'],
+ ['Perfurações','Perfuração Íntima Feminina'],
+ ['Perfurações','Perfuração Jestrum'],
+ ['Perfurações','Perfuração Labret'],
+ ['Perfurações','Perfuração Língua'],
+ ['Perfurações','Perfuração Lóbulo (Par)'],
+ ['Perfurações','Perfuração Low Helix'],
+ ['Perfurações','Perfuração Mamilos'],
+ ['Perfurações','Perfuração Medusa'],
+ ['Perfurações','Perfuração Microdermal'],
+ ['Perfurações','Perfuração Monroe'],
+ ['Perfurações','Perfuração Rook'],
+ ['Perfurações','Perfuração Septo'],
+ ['Perfurações','Perfuração Snug'],
+ ['Perfurações','Perfuração Sobrancelha'],
+ ['Perfurações','Perfuração Surface'],
+ ['Perfurações','Perfuração Tragus'],
+ ['Perfurações','Perfuração Transversal'],
+ ['Perfurações','Perfuração Transversal Lóbulo'],
+ ['Perfurações','Perfuração Úmbigo'],
+ ['Perfurações','Perfuração Vertical Labret'],
+ ['Perfurações','Perfuração Venom'],
+ ['Manutenção','Avaliação'],
+ ['Manutenção','Assistência de Joia'],
+ ['Manutenção','Limpeza e Manutenção de Joias'],
+ ['Manutenção','Polimento'],
+ ['Manutenção','Upgrade (Troca de Joia)'],
+ ['Procedimentos','Avaliação'],
+ ['Procedimentos','Laser (Fotobiomodulação)'],
+ ['Procedimentos','Recuperação de Perfuração'],
+ ['Procedimentos','Remoção Microdermal'],
+ ['Procedimentos','Remoção Piercing'],
+ ['Procedimentos','Retorno'],
+ ['Procedimentos','Tratamento de Complicações'],
+ ['Projeto','Projeto Personalizado']
+ ].map(([category,name],id)=>({id,category,name}));
+// Dados identificáveis na captura do MinhaAgenda. Valores ilegíveis não são inventados.
+const DEFAULT_PIERCING_NOTE = 'Valor referente à perfuração (joia não inclusa). O valor da joia é cobrado à parte, com modelos disponíveis no estúdio.';
+const SERVICE_INFO = {
+ 'Emergência':{duration:'30 min',price:'A partir de R$ 15,00',description:'Atendimento emergencial em intercorrências. Orientação inicial e avaliação da necessidade de cuidados.'},
+ 'Perfuração de Lóbulos Auriculares':{duration:'1 h',price:'A partir de R$ 70,00'},
+ 'Perfuração de Nariz':{duration:'50 min'},
+ 'Perfuração Anti-Hélix (Forward Helix)':{duration:'50 min'},
+ 'Perfuração Ashley':{duration:'50 min'},
+ 'Perfuração Bridge':{duration:'50 min'},
+ 'Perfuração Conch':{duration:'50 min'},
+ 'Perfuração Conch Rim':{duration:'50 min'},
+ 'Perfuração Daith':{duration:'50 min'},
+ 'Perfuração Hélix':{duration:'50 min'},
+ 'Perfuração Faux Rook':{duration:'50 min'},
+ 'Perfuração Flat':{duration:'45 min'},
+ 'Perfuração Hidden Hélix':{duration:'50 min'},
+ 'Perfuração Íntima Feminina':{duration:'1 h'},
+ 'Perfuração Jestrum':{duration:'50 min'},
+ 'Perfuração Labret':{duration:'50 min'},
+ 'Perfuração Língua':{duration:'50 min'},
+ 'Perfuração Lóbulo (Par)':{duration:'1 h'},
+ 'Perfuração Low Helix':{duration:'1 h'},
+ 'Perfuração Mamilos':{duration:'1 h'},
+ 'Perfuração Medusa':{duration:'50 min'},
+ 'Perfuração Microdermal':{duration:'1 h'},
+ 'Perfuração Monroe':{duration:'50 min'},
+ 'Perfuração Rook':{duration:'50 min'},
+ 'Perfuração Septo':{duration:'50 min'},
+ 'Perfuração Snug':{duration:'50 min'},
+ 'Perfuração Sobrancelha':{duration:'40 min'},
+ 'Perfuração Surface':{duration:'50 min'},
+ 'Perfuração Tragus':{duration:'50 min'},
+ 'Perfuração Transversal':{duration:'1 h'},
+ 'Perfuração Transversal Lóbulo':{duration:'30 min'},
+ 'Perfuração Úmbigo':{duration:'1 h'},
+ 'Perfuração Vertical Labret':{duration:'50 min'},
+ 'Perfuração Venom':{duration:'30 min'},
+ 'Avaliação':{duration:'20 min',description:'Avaliação individual antes da definição de cuidados ou procedimento.'},
+ 'Assistência de Joia':{duration:'30 min'},
+ 'Limpeza e Manutenção de Joias':{duration:'20 min',description:'Higienização e manutenção das peças, com avaliação das condições de uso.'},
+ 'Polimento':{duration:'60 min',description:'Polimento profissional para renovação do brilho das joias.'},
+ 'Upgrade (Troca de Joia)':{duration:'30 min',description:'Troca por uma joia nova e avaliação visual da perfuração. O valor da joia é à parte.'},
+ 'Laser (Fotobiomodulação)':{duration:'30 min',description:'Fotobiomodulação com laser de baixa intensidade para auxiliar em processos de recuperação, conforme avaliação profissional.'},
+ 'Recuperação de Perfuração':{duration:'30 min',description:'Avaliação da perfuração e orientação de cuidados para recuperação.'},
+ 'Remoção Microdermal':{duration:'30 min',description:'Remoção cuidadosa do microdermal, após avaliação do local.'},
+ 'Remoção Piercing':{duration:'20 min',description:'Retirada de piercing com avaliação da região.'},
+ 'Retorno':{duration:'20 min'},
+ 'Tratamento de Complicações':{duration:'30 min',description:'Acompanhamento de intercorrências da perfuração, conforme avaliação profissional.'},
+ 'Projeto Personalizado':{duration:'1 h',description:'Criação de uma composição personalizada de piercings e joias.'}
+};
+BLUE_SERVICES.forEach(s=>{
+ const info=SERVICE_INFO[s.name]||{};
+ s.duration=info.duration||null;
+ s.price=info.price||null;
+ s.description=info.description||(s.category==='Perfurações'?DEFAULT_PIERCING_NOTE:'Descrição detalhada disponível no catálogo oficial da Blue Piercer.');
+});
+(function(){
+ const view=document.getElementById('bookingView'),opener=document.getElementById('openBooking'),back=document.getElementById('bookingBack'),cat=document.getElementById('bookingCatalog'),detail=document.getElementById('bookingDetail'),tabs=document.getElementById('bookingCategories'),list=document.getElementById('bookingServices'),search=document.getElementById('bookingSearch');
+ if(!view||!opener)return;
+ const groups=['Emergência','Perfurações','Manutenção','Procedimentos','Projeto'];
+ let category='Perfurações',expanded=null,lastScroll=0,selectedService=null;
+ // Confirme o número diretamente com a profissional antes de publicar.
+ const BLUE_WHATSAPP='5534984106574';
+ const norm=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ function textEl(tag,cls,t){const e=document.createElement(tag);e.className=cls;e.textContent=t;return e}
+ function serviceArt(service){return 'assets/servico-'+String(service.id).padStart(2,'0')+'.webp';}
+ function teaser(service){
+  if(service.category!=='Perfurações')return service.description;
+  const key=norm(service.name);
+  if(/tragus/.test(key))return 'Região da pequena cartilagem na entrada da orelha.';
+  if(/conch/.test(key))return 'Região da concha, na parte central da orelha.';
+  if(/daith/.test(key))return 'Dobra interna da cartilagem da orelha.';
+  if(/rook/.test(key))return 'Dobra superior interna da cartilagem.';
+  if(/industrial|transversal/.test(key))return 'Composição transversal na cartilagem ou no lóbulo.';
+  if(/lobulo|lobulos/.test(key))return 'Região macia do lóbulo da orelha.';
+  if(/helix|helice|hidden|flat|forward|low/.test(key))return 'Região superior ou externa da cartilagem da orelha.';
+  if(/snug/.test(key))return 'Dobra interna da cartilagem da orelha.';
+  if(/septo/.test(key))return 'Região central inferior do nariz.';
+  if(/nariz|asa nasal/.test(key))return 'Lateral do nariz (narina).';
+  if(/bridge/.test(key))return 'Região da ponte nasal, entre os olhos.';
+  if(/medusa/.test(key))return 'Região central acima do lábio superior.';
+  if(/labret|ashley|jestrum|monroe/.test(key))return 'Região dos lábios ou ao redor deles.';
+  if(/sobrancelha/.test(key))return 'Região da sobrancelha.';
+  if(/umbigo/.test(key))return 'Região do umbigo.';
+  if(/lingua|venom/.test(key))return 'Região da língua.';
+  if(/mamilo/.test(key))return 'Região mamilar.';
+  if(/intima/.test(key))return 'Região íntima — avaliação individual.';
+  return 'Local e possibilidade da perfuração sujeitos à avaliação.';
+ }
+ function render(){
+  tabs.replaceChildren();groups.forEach(g=>{const t=textEl('button','booking-cat'+(g===category?' active':''),g);t.type='button';t.setAttribute('role','tab');t.setAttribute('aria-selected',String(g===category));t.addEventListener('click',()=>{if(g===category)return;category=g;expanded=null;search.value='';render();if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.fromTo('#bookingServices .service',{autoAlpha:0,y:9},{autoAlpha:1,y:0,duration:.33,stagger:.018,ease:'power2.out',clearProps:'all'})}});tabs.append(t)});
+  const query=norm(search.value.trim());const services=BLUE_SERVICES.filter(s=>(!query?s.category===category:norm(s.name).includes(query)||norm(s.category).includes(query)));
+  document.getElementById('bookingCount').textContent='';
+  document.getElementById('bookingImageNote').hidden = category!=='Perfurações' && !query;
+  list.replaceChildren();
+  if(!services.length){list.append(textEl('p','booking-empty','Nenhum serviço encontrado.'));return}
+  services.forEach(s=>{
+   const container=document.createElement('article');container.className='service'+(expanded===s.id?' is-expanded':'');
+   const header=document.createElement('button');header.type='button';header.className='service-main';header.setAttribute('aria-expanded',String(expanded===s.id));
+   const icon=textEl('span','service-icon','');const img=document.createElement('img');img.src=serviceArt(s);img.alt='Ilustração da região ou símbolo do atendimento';icon.append(img);
+   const tx=textEl('span','service-text','');
+   tx.append(textEl('span','service-name',s.name));
+   const meta=textEl('span','service-meta','');meta.append(textEl('span','',s.duration||'Duração a confirmar'));meta.append(textEl('span','',s.price||'Valor a consultar'));tx.append(meta);
+   header.append(icon,tx,textEl('span','service-arrow','›'));header.addEventListener('click',()=>{expanded=expanded===s.id?null:s.id;render()});
+   const extra=textEl('div','service-extra','');
+   const inner=textEl('div','service-extra-inner','');
+   inner.append(textEl('p','service-description',s.description));
+   const select=textEl('button','service-select','Escolher este procedimento');select.type='button';select.addEventListener('click',()=>choose(s));inner.append(select);
+   extra.append(inner);
+   container.append(header,extra);list.append(container);
+  });
+ }
+ function transition(fn){if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.to('.booking-inner',{opacity:0,y:10,duration:.13,onComplete:()=>{fn();gsap.fromTo('.booking-inner',{opacity:0,y:10},{opacity:1,y:0,duration:.22})}})}else fn()}
+ function choose(s){transition(()=>{selectedService=s;document.getElementById('bookingCustomerName').setAttribute('aria-invalid','false');document.getElementById('bookingNameError').textContent='';document.getElementById('detailCategory').textContent=s.category;document.getElementById('detailImage').src=serviceArt(s);document.getElementById('detailName').textContent=s.name;document.getElementById('detailIntro').textContent='Seu estilo, seu momento.';document.getElementById('detailDescription').textContent=s.description;document.getElementById('detailPricing').textContent=(s.duration||'Duração a confirmar')+' · '+(s.price||'Valor a consultar na agenda oficial');cat.classList.add('is-hidden');detail.classList.add('is-visible');document.getElementById('bookingStep').textContent='CONFIRMAR';view.scrollTop=0})}
+ function open(){selectedService=null;lastScroll=window.scrollY;view.inert=false;view.classList.add('is-open');view.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';cat.classList.remove('is-hidden');detail.classList.remove('is-visible');document.getElementById('bookingStep').textContent='SERVIÇOS';view.scrollTop=0;render();back.focus()}
+ function close(){view.classList.remove('is-open');view.setAttribute('aria-hidden','true');view.inert=true;document.body.style.overflow='';opener.focus();window.scrollTo(0,lastScroll)}
+ function goBack(){if(detail.classList.contains('is-visible')){transition(()=>{detail.classList.remove('is-visible');cat.classList.remove('is-hidden');document.getElementById('bookingStep').textContent='SERVIÇOS';view.scrollTop=0;const chosen=list.querySelector('.service.is-expanded .service-main');if(chosen)chosen.focus({preventScroll:true})})}else close()}
+ const whatsappForm=document.getElementById('bookingWhatsappForm');
+ const customerInput=document.getElementById('bookingCustomerName');
+ const nameError=document.getElementById('bookingNameError');
+ customerInput.addEventListener('input',()=>{customerInput.setAttribute('aria-invalid','false');nameError.textContent='';});
+ whatsappForm.addEventListener('submit',(event)=>{
+  event.preventDefault();
+  const name=customerInput.value.trim().replace(/\s+/g,' ');
+  if(name.length<2){nameError.textContent='Digite seu nome para continuar.';customerInput.setAttribute('aria-invalid','true');customerInput.focus();return;}
+  if(!selectedService){nameError.textContent='Escolha um procedimento antes de continuar.';return;}
+  const s=selectedService;
+  const message=[
+   'Olá, Blue Piercer! Tudo bem?',
+   '',
+   'Meu nome é '+name+'.',
+   'Gostaria de solicitar um agendamento para:',
+   '*'+s.name+'*',
+   'Categoria: '+s.category,
+   ...(s.duration?['Duração indicada: '+s.duration]:[]),
+   ...(s.price?['Valor informado: '+s.price]:[]),
+   '',
+   'Poderia me informar os horários disponíveis? Obrigada(o)!'
+  ].join('\n');
+  const url='https://wa.me/'+BLUE_WHATSAPP+'?text='+encodeURIComponent(message);
+  const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';document.body.appendChild(link);link.click();link.remove();
+ });
+ opener.addEventListener('click',e=>{e.preventDefault();open()});back.addEventListener('click',goBack);search.addEventListener('input',()=>{expanded=null;render()});
+ window.addEventListener('keydown',e=>{
+  if(!view.classList.contains('is-open'))return;
+  if(e.key==='Escape'){e.preventDefault();goBack();return;}
+  if(e.key==='Tab'){
+   const focusables=[...view.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),summary')]
+      .filter(el=>!el.closest('.booking-catalog.is-hidden,.booking-detail:not(.is-visible)')&&el.getClientRects().length>0);
+   if(!focusables.length)return;
+   const first=focusables[0],last=focusables[focusables.length-1];
+   if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus()}
+   else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus()}
+  }
+ });
+ render();
+})();;
+</script>
+
+</body></html>
