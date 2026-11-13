@@ -442,6 +442,51 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; overscroll-behavior-
 .booking-view .booking-step{font-size:10px;white-space:nowrap}
 @media(max-width:390px){.booking-top{gap:7px;padding-left:11px!important;padding-right:11px!important}.booking-brand{font-size:23px}.booking-exit{font-size:11px;padding:8px 9px}.booking-step{display:none}}
 
+
+/* Correção iPhone / Safari: separação real do painel e largura viewport. */
+:root { color-scheme: light; }
+html { max-width:100%; width:100%; overflow-x:clip; overscroll-behavior-x:none; }
+body { max-width:100%; width:100%; overflow-x:clip; overscroll-behavior-x:none; }
+.shell { max-width:100%; width:100%; min-width:0; overflow-x:clip; }
+.shell > .content { max-width:100%; min-width:0; margin-inline:auto; }
+.booking-view, .booking-view.is-open {
+  box-sizing:border-box; position:fixed!important; left:0!important; top:0!important; right:0!important; bottom:0!important;
+  width:100%!important; max-width:100%!important; min-width:0!important;
+  height:100dvh; max-height:100dvh; margin:0!important; padding:0!important;
+  overflow-x:clip!important; overflow-y:auto!important; overscroll-behavior-x:none;
+  -webkit-overflow-scrolling:touch;
+  transform:none!important; translate:none!important; zoom:1;
+}
+.booking-view .booking-inner {
+  box-sizing:border-box; width:100%!important; max-width:660px!important; min-width:0!important;
+  margin:0 auto!important; padding:0!important; transform:none!important;
+}
+.booking-top { position:sticky;top:0;left:0;right:0;box-sizing:border-box;width:100%;max-width:100%;min-width:0; }
+.booking-top > div { min-width:0; }
+.booking-brand { white-space:nowrap; }
+.booking-catalog,.booking-detail,.booking-hero,.booking-search,.booking-service-list,.service-list,
+.booking-whatsapp-form,.clean-detail,.clean-selection, .booking-detail .detail-piece {
+ box-sizing:border-box;max-width:100%;min-width:0;
+}
+.booking-cats { box-sizing:border-box; max-width:100%; min-width:0; overflow-x:visible!important; overflow-y:visible!important;
+  flex-wrap:wrap!important; justify-content:center!important; gap:8px 15px!important;
+  padding-block:5px 0!important; scroll-snap-type:none!important; touch-action:pan-y!important;
+}
+.booking-cat {flex:0 0 auto; min-width:0; scroll-snap-align:none; white-space:nowrap; touch-action:manipulation; }
+.booking-hero { max-width:calc(100% + 36px); }
+.service-main {min-width:0;width:100%;}
+.service-text,.service-name,.detail-card-title, .booking-title{min-width:0;overflow-wrap:break-word;}
+.booking-detail input, .booking-detail button {max-width:100%;font-size:max(16px, 1em);}
+#bookingCustomerName {width:100%;min-width:0;font-size:16px!important;} /* iOS: impede auto-zoom ao focar */
+@media(max-width:430px){
+ .booking-top {padding-left:10px!important;padding-right:10px!important;gap:6px!important;}
+ .booking-back {width:42px!important;min-width:42px!important;}
+ .booking-exit {padding-inline:10px!important;min-width:0;}
+ .booking-top .booking-brand{font-size:clamp(20px,5.4vw,25px)!important;}
+ .booking-cats{gap:6px 14px!important;}
+ .booking-cat{height:34px!important;min-height:34px!important;padding-bottom:8px!important;font-size:11px!important;}
+ .booking-catalog{padding-left:14px!important;padding-right:14px!important;}
+}
 </style>
 </head>
 <body>
@@ -782,15 +827,18 @@ BLUE_SERVICES.forEach(s=>{
    container.append(header,extra);list.append(container);
   });
  }
- function transition(fn){if(window.gsap&&!matchMedia('(prefers-reduced-motion: reduce)').matches){gsap.to('.booking-inner',{opacity:0,y:10,duration:.13,onComplete:()=>{fn();gsap.fromTo('.booking-inner',{opacity:0,y:10},{opacity:1,y:0,duration:.22})}})}else fn()}
- function choose(s){catalogScroll=view.scrollTop;transition(()=>{selectedService=s;document.getElementById('bookingCustomerName').setAttribute('aria-invalid','false');document.getElementById('bookingNameError').textContent='';document.getElementById('detailCategory').textContent=s.category;document.getElementById('detailImage').src=serviceArt(s);document.getElementById('detailName').textContent=s.name;document.getElementById('detailIntro').textContent='Seu estilo, seu momento.';document.getElementById('detailDescription').textContent=s.description;document.getElementById('detailPricing').textContent=(s.duration||'Duração a confirmar')+' · '+(s.price||'Valor a consultar na agenda oficial');cat.classList.add('is-hidden');detail.classList.add('is-visible');document.getElementById('bookingStep').textContent='CONFIRMAR';back.setAttribute('aria-label','Voltar aos procedimentos');view.scrollTop=0})}
- function open(){selectedService=null;catalogScroll=0;lastScroll=window.scrollY;back.setAttribute('aria-label','Voltar ao linkbio');view.inert=false;view.classList.add('is-open');view.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';cat.classList.remove('is-hidden');detail.classList.remove('is-visible');document.getElementById('bookingStep').textContent='SERVIÇOS';view.scrollTop=0;render();back.focus()}
- function close(){view.classList.remove('is-open');view.setAttribute('aria-hidden','true');view.inert=true;document.body.style.overflow='';opener.focus();window.scrollTo(0,lastScroll)}
- function goBack(){if(detail.classList.contains('is-visible')){transition(()=>{detail.classList.remove('is-visible');cat.classList.remove('is-hidden');document.getElementById('bookingStep').textContent='SERVIÇOS';back.setAttribute('aria-label','Voltar ao linkbio');requestAnimationFrame(()=>{view.scrollTop=catalogScroll;});const chosen=list.querySelector('.service.is-expanded .service-main');if(chosen)chosen.focus({preventScroll:true})})}else close()}
+ function transition(fn){ /* Troca de tela sem transformar o contêiner fixo no Safari. */ fn(); }
+ function choose(s){catalogScroll=view.scrollTop;transition(()=>{selectedService=s;document.getElementById('bookingCustomerName').setAttribute('aria-invalid','false');document.getElementById('bookingNameError').textContent='';document.getElementById('detailCategory').textContent=s.category;document.getElementById('detailImage').src=serviceArt(s);document.getElementById('detailName').textContent=s.name;document.getElementById('detailIntro').textContent='Seu estilo, seu momento.';document.getElementById('detailDescription').textContent=s.description;document.getElementById('detailPricing').textContent=(s.duration||'Duração a confirmar')+' · '+(s.price||'Valor a consultar na agenda oficial');cat.classList.add('is-hidden');detail.classList.add('is-visible');document.getElementById('bookingStep').textContent='CONFIRMAR';back.setAttribute('aria-label','Voltar aos procedimentos');view.scrollLeft=0;view.scrollTop=0;back.focus({preventScroll:true})})}
+ function open(){selectedService=null;catalogScroll=0;lastScroll=window.scrollY;back.setAttribute('aria-label','Voltar ao linkbio');view.inert=false;view.classList.add('is-open');view.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';cat.classList.remove('is-hidden');detail.classList.remove('is-visible');document.getElementById('bookingStep').textContent='SERVIÇOS';view.scrollLeft=0;view.scrollTop=0;render();back.focus({preventScroll:true})}
+ function close(){if(document.activeElement && view.contains(document.activeElement))document.activeElement.blur();view.classList.remove('is-open');view.setAttribute('aria-hidden','true');view.inert=true;document.body.style.overflow='';opener.focus({preventScroll:true});window.scrollTo({top:lastScroll,left:0,behavior:'instant'})}
+ function goBack(){if(document.activeElement && view.contains(document.activeElement))document.activeElement.blur();if(detail.classList.contains('is-visible')){transition(()=>{detail.classList.remove('is-visible');cat.classList.remove('is-hidden');document.getElementById('bookingStep').textContent='SERVIÇOS';back.setAttribute('aria-label','Voltar ao linkbio');view.scrollLeft=0;requestAnimationFrame(()=>{view.scrollTop=catalogScroll;back.focus({preventScroll:true});})})}else close()}
  const whatsappForm=document.getElementById('bookingWhatsappForm');
  const customerInput=document.getElementById('bookingCustomerName');
  const nameError=document.getElementById('bookingNameError');
  customerInput.addEventListener('input',()=>{customerInput.setAttribute('aria-invalid','false');nameError.textContent='';});
+ // Ao fechar o teclado do Safari, mantenha painel em x=0; evite que o foco force scroll horizontal.
+ customerInput.addEventListener('blur',()=>{ requestAnimationFrame(()=>{if(view.classList.contains('is-open'))view.scrollLeft=0;}); });
+ if(window.visualViewport){window.visualViewport.addEventListener('resize',()=>{if(view.classList.contains('is-open')){view.scrollLeft=0;}});} 
  whatsappForm.addEventListener('submit',(event)=>{
   event.preventDefault();
   const name=customerInput.value.trim().replace(/\s+/g,' ');
