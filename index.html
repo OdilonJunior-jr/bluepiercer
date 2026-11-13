@@ -437,8 +437,6 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; overscroll-behavior-
 .booking-back svg{width:21px;height:21px}
 .booking-exit{border:1px solid rgba(255,255,255,.38);border-radius:999px;background:rgba(255,255,255,.12);color:#fff4e9;padding:9px 11px;min-height:42px;font:600 12px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;touch-action:manipulation}
 .booking-exit span{font-size:18px;vertical-align:-1px;margin-left:3px;font-weight:400}
-.booking-detail-return{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 12px;margin:16px auto 6px;background:transparent;border:1px solid #c5d6d1;border-radius:13px;color:#275b62;font:600 13px 'DM Sans',sans-serif;min-height:48px;cursor:pointer;touch-action:manipulation}
-.booking-detail-return span{font-size:20px}
 .booking-view .booking-step{font-size:10px;white-space:nowrap}
 @media(max-width:390px){.booking-top{gap:7px;padding-left:11px!important;padding-right:11px!important}.booking-brand{font-size:23px}.booking-exit{font-size:11px;padding:8px 9px}.booking-step{display:none}}
 
@@ -487,6 +485,13 @@ body { max-width:100%; width:100%; overflow-x:clip; overscroll-behavior-x:none; 
  .booking-cat{height:34px!important;min-height:34px!important;padding-bottom:8px!important;font-size:11px!important;}
  .booking-catalog{padding-left:14px!important;padding-right:14px!important;}
 }
+
+/* Ajuste pontual Safari: a confirmação deve caber na largura do aparelho e
+   continuar rolável com o teclado aberto. As abas não são modificadas. */
+.booking-view{overflow-x:hidden!important;overscroll-behavior-x:none;}
+.booking-detail{min-width:0;overflow-x:clip;}
+.booking-detail .clean-detail{min-width:0;max-width:100%;padding-bottom:max(30px,env(safe-area-inset-bottom));}
+.booking-detail #bookingCustomerName{font-size:16px!important;scroll-margin-top:90px;}
 </style>
 </head>
 <body>
@@ -531,7 +536,6 @@ body { max-width:100%; width:100%; overflow-x:clip; overscroll-behavior-x:none; 
     <p id="bookingNameError" class="booking-field-error" role="alert" aria-live="polite"></p>
     <button type="submit" id="bookingFinish" class="booking-cta booking-whatsapp-cta"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.04 2A9.93 9.93 0 0 0 3.5 17.04L2 22l5.09-1.45A10 10 0 1 0 12.04 2Zm0 18.22a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.02.86.9-2.93-.2-.32a8.21 8.21 0 1 1 6.8 3.71Zm4.51-6.16c-.25-.12-1.48-.73-1.71-.82-.23-.08-.4-.12-.56.13-.17.25-.65.82-.8.99-.15.17-.29.18-.54.06-.25-.12-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.39-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31s-.87.85-.87 2.07.89 2.41 1.01 2.57c.13.17 1.76 2.69 4.27 3.78.6.26 1.07.42 1.44.53.61.2 1.17.17 1.61.1.49-.07 1.48-.6 1.69-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.29Z"/></svg><span>Solicitar horário</span><svg class="detail-submit-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 14 0m-6-6 6 6-6 6"/></svg></button>
    </form>
-   <button type="button" class="booking-detail-return" id="bookingDetailReturn"><span aria-hidden="true">←</span> Voltar aos procedimentos</button>
   </div>
  </section>
 </div></aside>
@@ -857,9 +861,37 @@ BLUE_SERVICES.forEach(s=>{
  const customerInput=document.getElementById('bookingCustomerName');
  const nameError=document.getElementById('bookingNameError');
  customerInput.addEventListener('input',()=>{customerInput.setAttribute('aria-invalid','false');nameError.textContent='';});
- // Ao fechar o teclado do Safari, mantenha painel em x=0; evite que o foco force scroll horizontal.
- customerInput.addEventListener('blur',()=>{ requestAnimationFrame(()=>{if(view.classList.contains('is-open'))view.scrollLeft=0;}); });
- if(window.visualViewport){window.visualViewport.addEventListener('resize',()=>{if(view.classList.contains('is-open')){view.scrollLeft=0;}});} 
+ // Safari iOS: ao recolher o teclado, devolver a confirmação ao topo, sem
+ // mudar o catálogo e sem alterar zoom/transformações do painel fixo.
+ let keyboardWasOpen=false;
+ let restoringKeyboard=false;
+ const viewport=window.visualViewport;
+ function keyboardVisible(){
+   if(!viewport)return false;
+   return viewport.height < window.innerHeight-110;
+ }
+ function resetDetailAfterKeyboard(){
+   if(!view.classList.contains('is-open')||!detail.classList.contains('is-visible')||restoringKeyboard)return;
+   restoringKeyboard=true;
+   const restore=()=>{
+     if(!view.classList.contains('is-open')||!detail.classList.contains('is-visible'))return;
+     view.scrollLeft=0;
+     view.scrollTop=0;
+   };
+   // iOS ajusta a viewport depois de esconder o teclado: acompanhar a transição.
+   requestAnimationFrame(()=>requestAnimationFrame(restore));
+   setTimeout(restore,180);
+   setTimeout(()=>{restore();restoringKeyboard=false;keyboardWasOpen=false;},420);
+ }
+ customerInput.addEventListener('focus',()=>{keyboardWasOpen=true;});
+ customerInput.addEventListener('blur',()=>{if(keyboardWasOpen)resetDetailAfterKeyboard();});
+ if(viewport){
+   viewport.addEventListener('resize',()=>{
+     if(!view.classList.contains('is-open'))return;
+     view.scrollLeft=0;
+     if(!keyboardVisible() && keyboardWasOpen && document.activeElement!==customerInput){resetDetailAfterKeyboard();}
+   });
+ }
  whatsappForm.addEventListener('submit',(event)=>{
   event.preventDefault();
   const name=customerInput.value.trim().replace(/\s+/g,' ');
@@ -881,7 +913,7 @@ BLUE_SERVICES.forEach(s=>{
   const url='https://wa.me/'+BLUE_WHATSAPP+'?text='+encodeURIComponent(message);
   const link=document.createElement('a');link.href=url;link.target='_blank';link.rel='noopener noreferrer';document.body.appendChild(link);link.click();link.remove();
  });
- opener.addEventListener('click',e=>{e.preventDefault();open()});back.addEventListener('click',goBack);document.getElementById('bookingExit').addEventListener('click',close);document.getElementById('bookingDetailReturn').addEventListener('click',goBack);search.addEventListener('input',()=>{expanded=null;render()});
+ opener.addEventListener('click',e=>{e.preventDefault();open()});back.addEventListener('click',goBack);document.getElementById('bookingExit').addEventListener('click',close);search.addEventListener('input',()=>{expanded=null;render()});
  window.addEventListener('keydown',e=>{
   if(!view.classList.contains('is-open'))return;
   if(e.key==='Escape'){e.preventDefault();goBack();return;}
